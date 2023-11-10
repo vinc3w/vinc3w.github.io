@@ -1,0 +1,33 @@
+@import "./../variables";
+@import "./../mixins";
+
+section.scrollable section.contact-me {
+
+	input, textarea, button {
+		border: 2px solid $dark;
+		outline: none;
+		border-radius: 5px;
+		width: 100%;
+		background-color: $light
+	}
+
+	input, textarea {
+		padding: 10px;
+		margin-bottom: 10px;
+
+		&::placeholder {
+			color: $dark;
+		}
+	}
+
+	textarea {
+		height: 300px;
+		resize: none;
+		overflow: auto;
+	}
+	
+	button {
+		padding: 15px 30px;
+		@include add-button-shadow(2px, 2px);
+	}
+}

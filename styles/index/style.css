@@ -1,0 +1,351 @@
+body .sub-body section.home {
+  position: sticky;
+  top: 40px;
+  max-width: 40%;
+  padding-right: 20px;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .sub-body section.home .title {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+body .sub-body section.home .name {
+  display: inline;
+}
+body .sub-body section.home .pronouns {
+  display: inline;
+  opacity: 0.5;
+}
+body .sub-body section.home .intro {
+  margin-top: 5px;
+}
+body .sub-body section.home .contact-btn {
+  margin-top: 10px;
+}
+body .sub-body section.home .contact-btn .label {
+  font-size: 1.5rem;
+}
+body .sub-body section.home .contact-btn .btn {
+  margin-top: 5px;
+  padding: 10px 20px;
+  display: inline-block;
+  background-color: #fff5ee;
+  position: relative;
+  background-color: #fff5ee;
+  border: 2px solid #45474b;
+  border-radius: 5px;
+  margin-right: 2px;
+}
+body .sub-body section.home .contact-btn .btn::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 2px;
+  left: 2px;
+  background-color: #45474b;
+  border: 2px solid #45474b;
+  border-radius: 5px;
+  z-index: -1;
+  transition: all 100ms ease;
+}
+body .sub-body section.home .contact-btn .btn:hover::after {
+  top: -2px;
+  left: -2px;
+}
+body .sub-body section.home nav {
+  margin-top: 20px;
+}
+body .sub-body section.home nav li {
+  list-style-type: none;
+}
+body .sub-body section.home nav li i {
+  height: 25px;
+  width: 25px;
+  display: inline-grid;
+  place-items: center;
+  margin-right: 5px;
+}
+body .sub-body section.home .socials {
+  margin-top: 20px;
+}
+body .sub-body section.home .socials li {
+  display: inline;
+  margin: 0 2px;
+}
+body .sub-body section.home .socials li i, body .sub-body section.home .socials li img {
+  height: 25px;
+  font-size: 25px;
+}
+@media (width <= 750px) {
+  body .sub-body {
+    flex-direction: column;
+  }
+  body .sub-body section.home {
+    position: static;
+    max-width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-bottom: 40px;
+  }
+  body .sub-body section.home .socials {
+    margin-top: 20px;
+  }
+}
+
+section.scrollable section.skills .skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+section.scrollable section.skills .skills .skill-wrapper {
+  transition: transform 100ms ease;
+}
+section.scrollable section.skills .skills .skill-wrapper .skill {
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #fff5ee;
+  border: 2px solid #45474b;
+  border-radius: 5px;
+  margin-right: 2px;
+}
+section.scrollable section.skills .skills .skill-wrapper .skill::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 2px;
+  left: 2px;
+  background-color: #45474b;
+  border: 2px solid #45474b;
+  border-radius: 5px;
+  z-index: -1;
+  transition: all 100ms ease;
+}
+section.scrollable section.skills .skills .skill-wrapper .skill .img {
+  background-position: center;
+  background-size: cover;
+  height: 25px;
+  width: 25px;
+}
+section.scrollable section.skills .skills .skill-wrapper .skill .name {
+  padding: 0 10px;
+}
+section.scrollable section.skills .skills .skill-wrapper:hover {
+  transform: scale(1.1);
+}
+
+section.scrollable section.projects .project-wrapper {
+  transition: transform 100ms ease;
+}
+section.scrollable section.projects .project-wrapper:hover {
+  transform: scale(1.02);
+}
+section.scrollable section.projects .project-wrapper .project {
+  position: relative;
+  display: flex;
+  margin-bottom: 15px;
+  min-height: 150px;
+  position: relative;
+  background-color: #fff5ee;
+  border: 2px solid #45474b;
+  border-radius: 5px;
+  margin-right: 2px;
+}
+section.scrollable section.projects .project-wrapper .project::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 2px;
+  left: 2px;
+  background-color: #45474b;
+  border: 2px solid #45474b;
+  border-radius: 5px;
+  z-index: -1;
+  transition: all 100ms ease;
+}
+section.scrollable section.projects .project-wrapper .project .img {
+  min-width: 40%;
+  border-right: 2px solid #45474b;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+section.scrollable section.projects .project-wrapper .project .about {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+section.scrollable section.projects .project-wrapper .project .about .title {
+  font-size: 1.5rem;
+}
+section.scrollable section.projects .project-wrapper .project .about .description {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.8rem;
+}
+section.scrollable section.projects .project-wrapper .project .about .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+section.scrollable section.projects .project-wrapper .project .about .tags .tag {
+  background-color: #45474b;
+  color: #fff5ee;
+  font-size: 0.7rem;
+  padding: 3px 7px;
+  border-radius: 10px;
+  list-style-type: none;
+  opacity: 0.6;
+}
+section.scrollable section.projects .project-wrapper .project .github {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 1.5rem;
+}
+
+section.scrollable section.contact-me input, section.scrollable section.contact-me textarea, section.scrollable section.contact-me button {
+  border: 2px solid #45474b;
+  outline: none;
+  border-radius: 5px;
+  width: 100%;
+  background-color: #fff5ee;
+}
+section.scrollable section.contact-me input, section.scrollable section.contact-me textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+section.scrollable section.contact-me input::-moz-placeholder, section.scrollable section.contact-me textarea::-moz-placeholder {
+  color: #45474b;
+}
+section.scrollable section.contact-me input::placeholder, section.scrollable section.contact-me textarea::placeholder {
+  color: #45474b;
+}
+section.scrollable section.contact-me textarea {
+  height: 300px;
+  resize: none;
+  overflow: auto;
+}
+section.scrollable section.contact-me button {
+  padding: 15px 30px;
+  display: inline-block;
+  background-color: #fff5ee;
+  position: relative;
+  background-color: #fff5ee;
+  border: 2px solid #45474b;
+  border-radius: 5px;
+  margin-right: 2px;
+}
+section.scrollable section.contact-me button::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 2px;
+  left: 2px;
+  background-color: #45474b;
+  border: 2px solid #45474b;
+  border-radius: 5px;
+  z-index: -1;
+  transition: all 100ms ease;
+}
+section.scrollable section.contact-me button:hover::after {
+  top: -2px;
+  left: -2px;
+}
+
+@font-face {
+  font-family: "cascadia code";
+  src: local("cascadia code"), url("./../../res/fonts/CascadiaCode.ttf") format("ttf"), url("./../../res/fonts/CascadiaCode.woff2") format("woff2");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #45474b;
+  font-family: "cascadia code", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 40px;
+}
+
+body {
+  background-color: #fff5ee;
+  padding: 40px;
+}
+body .sub-body {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+section.scrollable {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+}
+section.scrollable > * {
+  margin-bottom: 50px;
+}
+section.scrollable .heading, section.scrollable .sub-heading {
+  position: relative;
+}
+section.scrollable .heading .title, section.scrollable .sub-heading .title {
+  display: inline-block;
+  border: 2px solid #45474b;
+}
+section.scrollable .heading .line, section.scrollable .sub-heading .line {
+  height: 2px;
+  width: 100%;
+  background-color: #45474b;
+  position: absolute;
+  bottom: 0;
+}
+section.scrollable .heading {
+  margin-bottom: 20px;
+}
+section.scrollable .heading .title {
+  padding: 10px 15px;
+  font-size: 1.5rem;
+}
+section.scrollable .sub-heading {
+  margin-bottom: 10px;
+}
+section.scrollable .sub-heading .title {
+  padding: 5px 17px;
+  font-size: 1rem;
+}
+
+footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0 !important;
+}
+footer img {
+  height: 25px;
+  margin-right: 10px;
+}/*# sourceMappingURL=style.css.map */

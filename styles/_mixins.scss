@@ -1,0 +1,34 @@
+@import "./variables";
+
+@mixin add-shadow($x, $y) {
+	position: relative;
+	background-color: $light;
+	border: 2px solid $dark;
+	border-radius: 5px;
+	margin-right: 2px;
+
+	&::after {
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 2px;
+		left: 2px;
+		background-color: $dark;
+		border: 2px solid $dark;
+		border-radius: 5px;
+		z-index: -1;
+		transition: all 100ms ease;
+	}
+}
+
+@mixin add-button-shadow($x, $y) {
+	display: inline-block;
+	background-color: $light;
+	@include add-shadow($x, $y);
+
+	&:hover::after {
+		top: -2px;
+		left: -2px;
+	}
+}

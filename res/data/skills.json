@@ -1,0 +1,86 @@
+{
+	"languages": [
+	  {
+		"name": "Javascript",
+		"img": "./res/images/skills/languages/javascript.png"
+	  },
+	  {
+		"name": "Typescript",
+		"img": "./res/images/skills/languages/typescript.png"
+	  },
+	  {
+		"name": "HTML",
+		"img": "./res/images/skills/languages/html.png"
+	  },
+	  {
+		"name": "CSS",
+		"img": "./res/images/skills/languages/css.png"
+	  },
+	  {
+		"name": "Sass",
+		"img": "./res/images/skills/languages/sass.png"
+	  },
+	  {
+		"name": "Python",
+		"img": "./res/images/skills/languages/python.png"
+	  },
+	  {
+		"name": "Java",
+		"img": "./res/images/skills/languages/java.png"
+	  },
+	  {
+		"name": "C++",
+		"img": "./res/images/skills/languages/c++.png"
+	  },
+	  {
+		"name": "NodeJS",
+		"img": "./res/images/skills/languages/nodejs.png"
+	  }
+	],
+	"libraries": [
+	  {
+		"name": "DiscordJS",
+		"img": "./res/images/skills/libraries/discordjs.png"
+	  },
+	  {
+		"name": "ExpressJS",
+		"img": "./res/images/skills/libraries/expressjs.png"
+	  }
+	],
+	"tools": [
+	  {
+		"name": "Linux",
+		"img": "./res/images/skills/tools/linux.png"
+	  },
+	  {
+		"name": "Git",
+		"img": "./res/images/skills/tools/git.png"
+	  },
+	  {
+		"name": "MySQL",
+		"img": "./res/images/skills/tools/mysql.png"
+	  },
+	  {
+		"name": "MongoDB",
+		"img": "./res/images/skills/tools/mongodb.png"
+	  }
+	],
+	"technologies": [
+	  {
+		"name": "Figma",
+		"img": "./res/images/skills/technologies/figma.png"
+	  },
+	  {
+		"name": "Heroku",
+		"img": "./res/images/skills/technologies/heroku.png"
+	  },
+	  {
+		"name": "GitHub",
+		"img": "./res/images/skills/technologies/github.png"
+	  },
+	  {
+		"name": "Netlify",
+		"img": "./res/images/skills/technologies/netlify.png"
+	  }
+	]
+  }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#0a97D9">
+
+	<meta property="og:site_name" content="Vincent Har" />
+	<meta property="og:title" content="Vincent Har" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://vinc3w.github.io" />
+	<meta property="og:image" content="https://i.pinimg.com/originals/98/e9/2d/98e92d792e52130097f407df1b620995.gif" />
+	<meta property="og:description" content="This is my portfolio website hosted with Github pages. I try my best to make this simple and concise, making my skills and project do the talking more than me. Any suggestion, bugs or improvement, please contact me at vinc3w59@gmail.com ." />
+	<meta property="og:image:width" content="498">
+	<meta property="og:image:height" content="211">
+
+	<meta name="twitter:title" content="Vincent Har">
+	<meta name="twitter:site" content="@spamwithjihyo">
+	<meta name="twitter:description" content="This is my portfolio website hosted with Github pages. I try my best to make this simple and concise, making my skills and project do the talking more than me. Any suggestion, bugs or improvement, please contact me at vinc3w59@gmail.com .">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image:src" content="https://i.pinimg.com/originals/98/e9/2d/98e92d792e52130097f407df1b620995.gif">
+
+	<link rel="icon" type="image/png" sizes="16x16" href="./res/icons/favicon-16x16.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./res/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="./res/icons/android-chrome-192x192.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="./res/icons/apple-touch-icon.png">
+	<link rel="manifest" href="./site.webmanifest">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link rel="stylesheet" href="./styles/index/style.css">
+	<title>Vincent Har</title>
+</head>
+<body>
+	<div class="sub-body">
+		<section class="home">
+			<div id="me-container">
+				<div class="contact-btn">
+					<div class="label">Contact Me Here.</div>
+					<a class="btn" href="#contact-me-section">Contact Me</a>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="#skills"><i class="fa-solid fa-house"></i>Home</a></li>
+						<li><a href="#projects"><i class="fa-solid fa-bars"></i>Projects</a></li>
+						<li><a href="#contact-me"><i class="fa-solid fa-comment-dots"></i>Contact Me</a></li>
+					</ul>
+				</nav>
+			</div>
+			<ul class="socials">
+				<ul>
+					<li><img src="./res/images/icon.webp" alt=""></li>
+					<li><a href="https://discord.com/users/582932383381192705"><i class="fa-brands fa-discord"></i></a></li>
+					<li><a href="https://www.instagram.com/vinc3w59/"><i class="fa-brands fa-instagram"></i></a></li>
+					<li><a href="https://open.spotify.com/user/f8sifsire8pgeu635j5n4b2zh"><i class="fa-brands fa-spotify"></i></a></li>
+					<li><a href="https://github.com/vinc3w"><i class="fa-brands fa-github"></i></a></li>
+				</ul>
+			</ul>
+		</section>
+		<section class="scrollable">
+			<section class="skills" id="skills">
+				<div class="heading">
+					<div class="title">Skills</div>
+					<div class="line"></div>
+				</div>
+				<div class="skills-container" id="skills-container"></div>
+			</section>
+			<section class="projects" id="projects">
+				<div class="heading">
+					<div class="title">Projects</div>
+					<div class="line"></div>
+				</div>
+				<div class="projects-container" id="projects-container"></div>
+			</section>
+			<section class="contact-me" id="contact-me">
+				<div class="heading">
+					<div class="title">Contact Me</div>
+					<div class="line"></div>
+				</div>
+				<form id="contact-form">
+					<input name="subject" id="contact-subject" placeholder="Subject">
+					<textarea name="body" id="contact-body" placeholder="Body"></textarea>
+					<button type="submit">Send</button>
+				</form>
+			</section>
+			<footer>
+				<img src="./res/images/icon.webp" alt="">
+				@made by vinc3w
+			</footer>
+		</section>
+	</div>
+	<script src="./scripts/me.js" type="module"></script>
+	<script src="./scripts/skills.js" type="module"></script>
+	<script src="./scripts/projects.js" type="module"></script>
+	<script src="./scripts/contact.js" type="module"></script>
+</body>
+</html>

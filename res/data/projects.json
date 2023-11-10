@@ -1,0 +1,28 @@
+[
+	{
+	  "_id": "654a3f2b1888449452bf7bc2",
+	  "name": "Potato",
+	  "description": "Potato is a Discord bot that keeps people up to date with my personal Instagram blog account. Potato is very fast, not to mention is also extremely cute and also provide various functionalities such as chenging which text channel you want the updates to be in.",
+	  "img": "./res/images/projects/potato.png",
+	  "github": "https://github.com/vinc3w/Potato",
+	  "tags": [
+		"DiscordJS",
+		"Javascript",
+		"Typescript",
+		"NodeJS"
+	  ]
+	},
+	{
+	  "_id": "654a3fcb1888449452bf7bc3",
+	  "name": "Portfolio",
+	  "description": "This is my portfolio website hosted with Github pages. I try my best to make this simple and concise, making my skills and project do the talking more than me. Any suggestion, bugs or improvement, please contact me at vinc3w59@gmail.com .",
+	  "img": "./res/images/projects/portfolio.png",
+	  "github": "https://github.com/vinc3w/vinc3w.github.io",
+	  "tags": [
+		"HTML",
+		"Sass",
+		"CSS",
+		"Javascript"
+	  ]
+	}
+  ]

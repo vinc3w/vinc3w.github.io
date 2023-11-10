@@ -1,0 +1,24 @@
+{
+	"name": "Vincent",
+	"favourite": [
+	  "Park Jihyo (박지효)",
+	  "Choi Yena (최예나)",
+	  "Jo Yuri (조유리)",
+	  "K-Pop",
+	  "Programming",
+	  "Hacking"
+	],
+	"intro": "I’m currently studying Diploma in Information Technology at Sunway College and this is what I have been doing for almost 4 years now.",
+	"gallery": [
+	  "./res/images/gallery/jihyo1.png",
+	  "./res/images/gallery/jihyo2.png",
+	  "./res/images/gallery/jihyo3.png",
+	  "./res/images/gallery/jihyo4.png"
+	],
+	"personalityType": "ISFP-T",
+	"pronouns": [
+	  "he",
+	  "him"
+	],
+	"age": 17
+  }

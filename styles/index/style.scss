@@ -1,0 +1,101 @@
+@import "./../variables";
+@import "./../mixins";
+
+@import "./../layouts/home.scss";
+@import "./../layouts/skills.scss";
+@import "./../layouts/projects.scss";
+@import "./../layouts/contact.scss";
+
+@font-face {
+	font-family: "cascadia code";
+	src: local("cascadia code"),
+			 url("./../../res/fonts/CascadiaCode.ttf") format("ttf"),
+			 url("./../../res/fonts/CascadiaCode.woff2") format("woff2");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: $dark;
+	font-family: "cascadia code", sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 40px;
+}
+
+body {
+	background-color: $light;
+	padding: 40px;
+
+	.sub-body {
+		max-width: 1000px;
+		margin: 0 auto;
+		position: relative;
+		display: flex;
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+section.scrollable {
+	min-height: calc(100vh - 80px);
+	display: flex;
+	flex-direction: column;
+
+	> * {
+		margin-bottom: 50px;
+	}
+
+	.heading, .sub-heading {
+		position: relative;
+
+		.title {
+			display: inline-block;
+			border: 2px solid $dark;
+		}
+
+		.line {
+			height: 2px;
+			width: 100%;
+			background-color: $dark;
+			position: absolute;
+			bottom: 0;
+		}
+	}
+
+	.heading {
+		margin-bottom: 20px;
+
+		.title {
+			padding: 10px 15px;
+			font-size: 1.5rem;
+		}
+	}
+
+	.sub-heading {
+		margin-bottom: 10px;
+
+		.title {
+			padding: 5px 17px;
+			font-size: 1rem;
+		}
+	}
+} 
+
+footer {
+	margin-top: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 0 !important;
+
+	img {
+		height: 25px;
+		margin-right: 10px;
+	}
+}

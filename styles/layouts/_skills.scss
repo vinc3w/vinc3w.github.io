@@ -1,0 +1,38 @@
+@import "./../variables";
+@import "./../mixins";
+
+section.scrollable section.skills {
+
+	.skills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		margin-bottom: 30px;
+
+		.skill-wrapper {
+			transition: transform 100ms ease;
+
+			.skill {
+				padding: 3px;
+				display: flex;
+				align-items: center;
+				@include add-shadow(2px, 2px);
+
+				.img {
+					background-position: center;
+					background-size: cover;
+					height: 25px;
+					width: 25px;
+				}
+
+				.name {
+					padding: 0 10px;
+				}
+			}
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
+}
