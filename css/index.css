@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Cascadia Code";
-  src: url("/res/fonts/CascadiaCode.TTF");
+  src: url("../res/fonts/CascadiaCode.ttf");
 }
 @keyframes shake {
   0% {
