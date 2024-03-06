@@ -1,0 +1,21 @@
+{
+    "name": "Vincent Har",
+    "short_name": "vinc3w",
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#fff5ee",
+    "background_color": "#fff5ee",
+    "description": "Vincent's portfolio website.",
+    "icons": [
+        {
+            "src": "./res/img/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./res/img/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

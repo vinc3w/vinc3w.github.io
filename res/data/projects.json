@@ -1,0 +1,17 @@
+[
+    {
+        "title": "JobHub",
+        "description": "A personal portfolio management system to help the unemployed get employed.",
+        "cover_img": "https://raw.githubusercontent.com/vinc3w/JobHub/main/public/assets/home.png",
+        "github_link": "https://github.com/vinc3w/JobHub",
+        "tags": [
+            "HTML",
+            "CSS",
+            "TailwindCSS",
+            "Javascript",
+            "Php",
+            "MySQL",
+            "Web Development"
+        ]
+    }
+]

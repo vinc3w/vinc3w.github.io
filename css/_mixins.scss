@@ -1,0 +1,42 @@
+@mixin shadow {
+    border: 2px solid $dark;
+    border-radius: 7px;
+    position: relative;
+    box-shadow: 3px 3px 5px $dark;
+    
+    &::before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        background-color: $dark;
+        border: 2px solid $dark;
+        border-radius: 7px;
+        z-index: -10;
+    }
+}
+
+@mixin button {
+    transition: transform 100ms linear;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+    
+    button {
+        @include shadow;
+        cursor: pointer;
+        font-weight: bold;
+
+        &:hover::before {
+            top: -2px;
+            left: -2px;
+        }
+
+        &::before {
+            transition: all 100ms linear;
+        }
+    }
+}

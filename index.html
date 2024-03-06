@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Vincent's portfolio website. See what Vincent can do and what he did. Contact me now!">
+	<meta name="robots" content="nofollow, index">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+	<link rel="stylesheet" href="/css/index.css">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="./res/img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./res/img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./res/img/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<!-- Discord Card -->
+	<meta property="og:title" content="Vincent Har" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://vinc3w.github.io/" />
+	<meta property="og:image" content="https://vinc3w.github.io/res/img/icon.webp" />
+	<meta property="og:description" content="Vincent's portfolio website." />
+	<meta name="theme-color" content="#fff5ee">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@spamwithjihyo">
+	<meta name="twitter:creator" content="@spamwithjihyo">
+	<meta name="twitter:title" content="Vincent Har">
+	<meta name="twitter:description" content="Vincent's portfolio website.">
+	<meta name="twitter:image" content="https://vinc3w.github.io/res/img/icon.webp">
+	
+	<!-- Linkedin & Facebook Card -->
+	<meta property='og:title' content="Vincent Har" />
+	<meta property='og:image' content="https://vinc3w.github.io/res/img/icon.webp" />
+	<meta property="og:type" content="website" />
+	<meta property='og:description' content="Vincent's portfolio website." />
+	<meta property='og:url' content="https://vinc3w.github.io/res/img/icon.webp" />
+
+	<title>Vincent Har</title>
+</head>
+<body>
+
+	<main>
+
+		<section class="home">
+
+			<div class="greeting">Hello</div>
+	
+			<div>I'm <a href="https://github.com/vinc3w" target="_blank" class="name">Vincent Har</a>.</div>
+	
+			<div class="bio">I am currently studying for my diploma in Information Technology at Sunway College and I am passionate about programming, having dedicated four years to learning to code, I am confident about my skills.</div>
+	
+			<nav>
+				<ul>
+					<li>
+						<a href="#skills">
+							<div class="line"></div>
+							<div>Skills</div>
+						</a>
+					</li>
+					<li>
+						<a href="#projects">
+							<div class="line"></div>
+							<div>Projects</div>
+						</a>
+					</li>
+					<li>
+						<a href="#contact-me">
+							<div class="line"></div>
+							<div>Contact Me</div>
+						</a>
+					</li>
+				</ul>
+			</nav>
+	
+			<div class="socials">
+				<ul>
+					<li><img src="/res/img/icon.webp" alt="Website's icon"></li>
+					<li><a href="https://discord.com/users/582932383381192705" target="_blank"><i class="fa-brands fa-discord"></i></a></li>
+					<li><a href="https://www.instagram.com/vinc3w59/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+					<li><a href="https://github.com/vinc3w" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+				</ul>
+			</div>
+	
+		</section>
+	
+		<section class="content">
+	
+			<section id="skills" class="skills">
+
+				<div class="heading">
+					<div class="title">Skills</div>
+				</div>
+
+				<div>
+					<div class="sub-heading">
+						<div class="title">Web Development</div>
+					</div>
+					<div id="web-dev-skills" class="container"></div>
+				</div>
+
+				<div>
+					<div class="sub-heading">
+						<div class="title">Server</div>
+					</div>
+					<div id="server-skills" class="container"></div>
+				</div>
+
+				<div>
+					<div class="sub-heading">
+						<div class="title">Technology</div>
+					</div>
+					<div id="technology-skills" class="container"></div>
+				</div>
+
+				<div>
+					<div class="sub-heading">
+						<div class="title">Language</div>
+					</div>
+					<div id="language-skills" class="container"></div>
+				</div>
+
+			</section>
+	
+			<section id="projects" class="projects">
+
+				<div class="heading">
+					<div class="title">Projects</div>
+				</div>
+
+				<div id="project-container" class="project-container"></div>
+
+			</section>
+	
+			<section id="contact-me" class="contact-me">
+
+				<div class="heading">
+					<div class="title">Contact Me</div>
+				</div>
+
+				<form action="mailto:vinc3w59@gmail.com">
+					<input type="text" placeholder="Subject">
+					<textarea placeholder="Body"></textarea>
+					<div class="button-wrapper">
+						<button>Send</button>
+					</div>
+				</form>
+				
+			</section>
+
+			<footer>Made by Vincent Har ❤️</footer>
+	
+		</section>
+
+		<div class="cta-wrapper" id="cta">
+			<div class="cta">
+				<div>Looking for someone like me?</div>
+				<div class="right">
+					<a href="#contact-me" class="contact-me">Contact Me</a>
+					<button id="close-cta-btn" class="close"><i class="fa-solid fa-xmark"></i></button>
+				</div>
+			</div>
+		</div>
+
+	</main>
+	
+	<script src="./js/cta.js" type="module"></script>
+	<script src="./js/insert-data.js" type="module"></script>
+</body>
+</html>

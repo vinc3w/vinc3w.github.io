@@ -1,0 +1,74 @@
+.home {
+	min-height: calc(100vh - 40px);
+	max-height: calc(100vh - 40px);
+	min-width: 350px;
+	max-width: 350px;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+
+	.greeting {
+		font-size: 80px;
+	}
+
+	.name {
+		border-bottom: 1px dashed $dark;
+		transition: opacity 100ms linear;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+	.bio {
+		margin-top: 5px;
+	}
+
+	nav {
+		margin-top: 10px;
+		display: flex;
+		align-items: center;
+
+		li {
+			margin: 5px 0;
+		}
+
+		a {
+			padding: 5px 0;
+			display: flex;
+			align-items: center;
+
+			&:hover {
+				opacity: 0.7;
+			}
+
+			&:hover .line {
+				width: 120px
+			}
+
+			.line {
+				border: 1px solid $dark;
+				width: 70px;
+				margin-right: 10px;
+				transition: all 150ms ease;
+			}
+		}
+	}
+
+	.socials {
+		margin-top: auto;
+
+		ul {
+			display: flex;
+			gap: 10px;
+
+			img {
+				height: 25px;
+			}
+
+			a {
+				font-size: 25px;
+			}
+		}
+	}
+}
