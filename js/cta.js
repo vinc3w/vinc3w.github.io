@@ -10,4 +10,10 @@ closeBtn.onclick = () => {
 
     }, 100);
 
+    localStorage.hide_cta = true;
+
+}
+
+if (localStorage.hide_cta) {
+    cta.style.display = 'none';
 }
