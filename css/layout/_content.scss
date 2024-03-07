@@ -2,6 +2,15 @@
     margin-left: 390px;
     width: 100%;
 
+	@media (width <= 900px) {
+		margin-left: 290px;
+		margin-left: 290px;
+	}
+
+    @media (width <= 750px) {
+        margin-left: 0;
+    }
+
     section {
         margin-bottom: 60px;
 
@@ -111,6 +120,10 @@
                     border-top-left-radius: 7px;
                     border-bottom-left-radius: 7px;
                     border-right: 2px solid $dark;
+
+                    @media (width <= 500px) {
+                        width: 130px;
+                    }
                 }
 
                 .text {

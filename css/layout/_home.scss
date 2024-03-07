@@ -7,6 +7,19 @@
 	display: flex;
 	flex-direction: column;
 
+	@media (width <= 900px) {
+		min-width: 250px;
+		max-width: 250px;
+	}
+
+	@media (width <= 750px) {
+		position: static;
+		min-width: 100%;
+		max-width: 100%;
+		min-height: auto;
+		max-height: auto;
+	}
+
 	.greeting {
 		font-size: 80px;
 	}
@@ -62,7 +75,20 @@
 	.socials {
 		margin-top: auto;
 
+		@media (width <= 750px) {
+			margin-bottom: 20px;
+
+			ul {
+				display: flex;
+
+				a div {
+					display: none;
+				}
+			}
+		}
+
 		ul {
+		margin-top: 10px;
 
 			a {
 				display: flex;

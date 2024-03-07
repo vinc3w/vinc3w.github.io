@@ -43,6 +43,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Cascadia Code", sans-serif;
   color: #45474b;
@@ -64,7 +68,37 @@ body::before {
 body main {
   max-width: 1000px;
   margin: 0 auto;
+}
+@media (width > 750px) {
+  body main {
+    display: flex;
+  }
+}
+
+.up-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: #45474b;
+  color: #fff5ee;
+  padding: 10px;
+  height: 40px;
+  width: 40px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border-radius: 50%;
+  transition: transform 70ms linear;
+  cursor: pointer;
+}
+.up-button:hover {
+  transform: scale(1.1);
+}
+@media (width > 750px) {
+  .up-button {
+    display: none;
+  }
 }
 
 a {
@@ -95,6 +129,21 @@ ul li {
   position: fixed;
   display: flex;
   flex-direction: column;
+}
+@media (width <= 900px) {
+  .home {
+    min-width: 250px;
+    max-width: 250px;
+  }
+}
+@media (width <= 750px) {
+  .home {
+    position: static;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    max-height: auto;
+  }
 }
 .home .greeting {
   font-size: 80px;
@@ -140,6 +189,20 @@ ul li {
 .home .socials {
   margin-top: auto;
 }
+@media (width <= 750px) {
+  .home .socials {
+    margin-bottom: 20px;
+  }
+  .home .socials ul {
+    display: flex;
+  }
+  .home .socials ul a div {
+    display: none;
+  }
+}
+.home .socials ul {
+  margin-top: 10px;
+}
 .home .socials ul a {
   display: flex;
   align-items: center;
@@ -159,6 +222,17 @@ ul li {
 .content {
   margin-left: 390px;
   width: 100%;
+}
+@media (width <= 900px) {
+  .content {
+    margin-left: 290px;
+    margin-left: 290px;
+  }
+}
+@media (width <= 750px) {
+  .content {
+    margin-left: 0;
+  }
 }
 .content section {
   margin-bottom: 60px;
@@ -284,6 +358,11 @@ ul li {
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
   border-right: 2px solid #45474b;
+}
+@media (width <= 500px) {
+  .content section.projects .project-wrapper .project img {
+    width: 130px;
+  }
 }
 .content section.projects .project-wrapper .project .text {
   display: flex;
