@@ -140,15 +140,20 @@ ul li {
 .home .socials {
   margin-top: auto;
 }
-.home .socials ul {
-  display: flex;
-  gap: 10px;
-}
-.home .socials ul img {
-  height: 25px;
-}
 .home .socials ul a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  transition: opacity 50ms linear;
+}
+.home .socials ul a:hover {
+  opacity: 0.7;
+}
+.home .socials ul a i {
   font-size: 25px;
+  margin-right: 10px;
+  width: 30px;
+  text-align: center;
 }
 
 .content {
