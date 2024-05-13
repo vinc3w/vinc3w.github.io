@@ -21,22 +21,22 @@
             "website": "https://tailwindcss.com/"
         },
         {
-            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-            "name": "JavaScript",
-            "website": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-        },
-        {
-            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
-            "name": "TypeScript",
-            "website": "https://www.typescriptlang.org/"
-        },
-        {
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
             "name": "React",
             "website": "https://react.dev/"
         }
     ],
     "server": [
+        {
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+            "name": "NodeJS",
+            "website": "https://nodejs.org/en/about"
+        },
+        {
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+            "name": "ExpressJS",
+            "website": "https://expressjs.com/"
+        },
         {
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
             "name": "MySQL",
@@ -48,14 +48,14 @@
             "website": "https://www.mongodb.com/"
         },
         {
-            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
-            "name": "PHP",
-            "website": "https://www.php.net/"
-        },
-        {
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
             "name": "Laravel",
             "website": "https://laravel.com/"
+        },
+        {
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg",
+            "name": "Flask",
+            "website": "https://flask.palletsprojects.com/en/3.0.x/"
         }
     ],
     "technology": [
@@ -95,19 +95,9 @@
             "website": "https://developer.android.com/"
         },
         {
-            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
-            "name": "NodeJS",
-            "website": "https://nodejs.org/en/about"
-        },
-        {
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg",
             "name": "NPM",
             "website": "https://www.npmjs.com/"
-        },
-        {
-            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
-            "name": "ExpressJS",
-            "website": "https://expressjs.com/"
         },
         {
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/replit/replit-original.svg",
@@ -126,6 +116,21 @@
         }
     ],
     "language": [
+        {
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+            "name": "JavaScript",
+            "website": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        },
+        {
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+            "name": "TypeScript",
+            "website": "https://www.typescriptlang.org/"
+        },
+        {
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
+            "name": "PHP",
+            "website": "https://www.php.net/"
+        },
         {
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
             "name": "Python",
