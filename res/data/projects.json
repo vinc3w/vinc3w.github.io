@@ -13,5 +13,18 @@
             "MySQL",
             "Web Development"
         ]
+    },
+    {
+        "title": "Moo",
+        "description": "A user-centric platform that enable communication to people around the globe.",
+        "cover_img": "https://raw.githubusercontent.com/vinc3w/Moo/main/res/cover.png",
+        "github_link": "https://github.com/vinc3w/Moo",
+        "tags": [
+            "React",
+            "ExpressJS",
+            "MongoDB",
+            "NodeJS",
+            "Sass"
+        ]
     }
 ]
