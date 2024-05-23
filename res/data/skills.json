@@ -48,6 +48,11 @@
             "website": "https://www.mongodb.com/"
         },
         {
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongoose/mongoose-original.svg",
+            "name": "Mongoose",
+            "website": "https://mongoosejs.com/"
+        },
+        {
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
             "name": "Laravel",
             "website": "https://laravel.com/"
@@ -83,6 +88,11 @@
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
             "name": "Figma",
             "website": "https://www.figma.com/"
+        },
+        {
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg",
+            "name": "Canva",
+            "website": "https://www.canva.com/"
         },
         {
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/discordjs/discordjs-original.svg",
