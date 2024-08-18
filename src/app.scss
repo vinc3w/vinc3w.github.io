@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('$lib/ttf/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('$lib/ttf/Poppins-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins-Black';
+    src: url('$lib/ttf/Poppins-Black.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins-Italic';
+    src: url('$lib/ttf/Poppins-Italic.ttf');
+}
+
+@font-face {
+    font-family: 'Noto Color Emoji';
+    src: url('$lib/ttf/NotoColorEmoji-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input, textarea, button {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    color: $black;
+    font-family: 'Poppins';
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+}
+
+body {
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    color: $black;
+    font-family: 'Poppins';
+}
+
+span.bold {
+    font-family: 'Poppins-Bold';
+}
+
+span.black {
+    font-family: 'Poppins-Black';
+}
+
+span.italic {
+    font-family: 'Poppins-Italic';
+}
+
+span.underline {
+    text-decoration: underline;
+}
+
+span.emoji {
+    font-family: 'Noto Color Emoji';
+}
+
+.wrapper {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}

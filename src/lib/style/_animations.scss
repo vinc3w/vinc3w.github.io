@@ -1,0 +1,13 @@
+@keyframes subtle-float {
+    0% { transform: translate(0,  0px); }
+    25% { transform: translate(0,  3px); }
+    75%  { transform: translate(0, -3px); }
+    100%   { transform: translate(0, 0px); }    
+}
+
+@keyframes float {
+    0% { transform: translate(0,  0px); }
+    25% { transform: translate(0,  10px); }
+    75%  { transform: translate(0, -10px); }
+    100%   { transform: translate(0, 0px); }    
+}
