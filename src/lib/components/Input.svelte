@@ -5,14 +5,22 @@
 
     let isFocus = false;
     let value = '';
+    let input;
 </script>
 
 <div class="input-container" class:focus={isFocus || value.trim()}>
-    <div class="label">{label}</div>
+    <button
+        type="button"
+        class="label"
+        on:click={() => input.focus()}
+    >
+        {label}
+    </button>
     {#if isTextarea}
         <textarea 
             type="text"
             {name}
+            bind:this={input}
             bind:value
             on:focus={() => isFocus = true}
             on:blur={() => isFocus = false} ></textarea>
@@ -20,6 +28,7 @@
         <input 
             type="text"
             {name}
+            bind:this={input}
             bind:value
             on:focus={() => isFocus = true}
             on:blur={() => isFocus = false} />
