@@ -49,6 +49,7 @@
             position: absolute;
             font-size: 14px;
             transition: all 100ms ease;
+            cursor: text;
         }
 
         &.focus .label {
