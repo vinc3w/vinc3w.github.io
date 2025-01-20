@@ -1,0 +1,76 @@
+:root {
+  --foreground: #000000;
+  --background: #FFFFFF;
+  --neutral: #6E6E6E;
+
+  --header-height: 5.875rem;
+}
+
+@font-face {
+  font-family: "Poppins"; 
+  src: url("$lib/assets/fonts/Poppins-Regular.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Poppins"; 
+  src: url("$lib/assets/fonts/Poppins-Bold.ttf");
+  font-weight: bold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  color: var(--foreground);
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 1.25rem;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* HIDE SCROLLBAR */
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* IE and Edge */
+body {
+  -ms-overflow-style: none;
+}
+
+/* Chrome */
+body::-webkit-scrollbar, body::-webkit-scrollbar-button {
+  display: none;
+}
