@@ -6,7 +6,7 @@
 
   const { label, value } = $props();
 
-  let searchParams;
+  let searchParams = $state();
   let button = $state();
   let height = $derived(button?.clientHeight / 16);
   let width = $derived(button?.clientWidth / 16);
@@ -22,7 +22,7 @@
     } else {
       filter.push(value);
     }
-    page.url.searchParams.set("filter", filter.filter(i => !!i).join(","));
+    searchParams.set("filter", filter.filter(i => !!i).join(","));
     goto(page.url);
   }
 </script>
@@ -40,7 +40,7 @@
   <button
     bind:this={button}
     onclick={() => setFilter(value)}
-    class:on={page.url.searchParams.get("filter")?.split(",").includes(value)}
+    class:on={searchParams?.get("filter")?.split(",").includes(value)}
   >
     {label}
   </button>
