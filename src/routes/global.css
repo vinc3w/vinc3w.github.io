@@ -55,7 +55,6 @@ body {
   font-size: 1.25rem;
   min-height: 100vh;
   max-width: 100vw;
-  overflow-x: hidden;
 }
 
 /* HIDE SCROLLBAR */

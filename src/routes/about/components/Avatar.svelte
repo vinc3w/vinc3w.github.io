@@ -1,9 +1,11 @@
 <script>
   import * as THREE from "three";
   import Avatar from "$lib/assets/imgs/avatar.png";
+  import TexturePng from "$lib/assets/imgs/avatar-texture.png";
   import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
   import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
   import { onMount } from "svelte";
+  import { PUBLIC_URL } from "$env/static/public";
 
   // svelte-ignore non_reactive_update
   let canvas;
@@ -20,10 +22,10 @@
     scene.background =  new THREE.Color().setHex(0xFFFFFF);
 
     loader.load(
-      "./src/lib/assets/models/avatar/avatar.obj",
+      PUBLIC_URL + "/models/avatar/avatar.obj",
       function (obj) {
         object = obj;
-        const texture = new THREE.TextureLoader().load("./src/lib/assets/models/avatar/texture.png");
+        const texture = new THREE.TextureLoader().load(TexturePng);
 
         object.traverse(function (child) {
           if (child instanceof THREE.Mesh) {
@@ -57,6 +59,7 @@
     scene.add(ambientLight);
 
     controls = new OrbitControls(camera, renderer.domElement);
+    controls.enablePan = false;
     controls.enableZoom = false;
 
     function animate() {
@@ -89,7 +92,7 @@
   <div class="canvas-container">
     <canvas bind:this={canvas}></canvas>
   </div>
-  <div class="image-container not-error">
+  <div class="image-container breakpoint">
     <img src={Avatar} alt="avatar">
   </div>
 {/if}
@@ -98,13 +101,14 @@
   .canvas-container {
     position: sticky;
     top: 2rem;
+    font-size: 0;
+    height: 35rem;
   }
 
   canvas {
-    height: 40rem;
     max-height: calc(100vh - 4rem);
+    height: 100%;
     width: 100%;
-    background-color: transparent;
   }
 
   .image-container {
@@ -112,7 +116,7 @@
     place-items: center;
   }
 
-  .image-container.not-error {
+  .image-container.breakpoint {
     display: none;
   }
 
@@ -126,14 +130,18 @@
       display: none;
     }
 
-    .image-container.not-error {
+    .image-container.breakpoint {
+      display: flex;
+    }
+
+    .image-container {
       margin: 5rem 0;
       width: 100%;
       display: flex;
       justify-content: center;
     }
 
-    .image-container.not-error img {
+    .image-container img {
       width: 40%;
     }
   }
