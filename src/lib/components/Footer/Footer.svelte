@@ -56,12 +56,14 @@
   }
 
   .container {
+    max-height: 100vh;
     position: fixed;
     bottom: 0;
     width: 100vw;
     display: flex;
     flex-direction: column;
-    gap: 16rem;
+    justify-content: space-between;
+    gap: 6rem;
     padding: 2rem;
     background-color: var(--foreground);
     color: var(--background);
