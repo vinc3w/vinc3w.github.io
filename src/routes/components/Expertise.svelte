@@ -65,14 +65,16 @@
     content: "";
     position: absolute;
     height: 100vh;
-    max-width: 100vw;
+    width: 100vw;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 10;
   }
 
   .title {
     width: fit-content;
     font-weight: bold;
-    font-size: 40vw;
+    font-size: 30vw;
   }
 
   .content {
