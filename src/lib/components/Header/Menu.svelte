@@ -92,7 +92,6 @@
   $effect(() => {
     let index = -1;
 
-
     if (pathname === "/") {
       index = 0;
     } else if (pathname.startsWith("/work")) {
@@ -106,7 +105,7 @@
     const linkTop = linkClientHeight * index;
     const offset = (linkClientHeight / 2) - (pageIndicator.clientHeight / 2);
 
-    if (isArrowMoving) return;
+    if (untrack(() => isArrowMoving)) return;
 
     gsap.to(pageIndicator, {
       y: linkTop + offset,
