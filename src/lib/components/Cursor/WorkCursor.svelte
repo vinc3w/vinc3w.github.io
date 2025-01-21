@@ -93,9 +93,7 @@
   {/if}
   {#each images as image}
   <div class="image-container" style:background-color={image.color}>
-    {#if isHovered}
-      <img src={image.url} alt="custom effect">
-    {/if}
+    <img src={image.url} alt="custom effect" style:display={isHovered ? "block" : "none"}>
   </div>
   {/each}
 </div>

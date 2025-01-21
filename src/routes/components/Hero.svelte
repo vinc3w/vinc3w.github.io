@@ -4,17 +4,29 @@
   import AvatarSittingOnTheFloor from "$lib/assets/imgs/avatar-sitting-on-the-floor.png";
   import AvatarWithPaintings from "$lib/assets/imgs/avatar-with-paintings.png";
   import about from "$lib/data/about";
-  import { onMount } from "svelte";
+  import page from "$lib/state/page.svelte";
+  import { untrack } from "svelte";
 
   let container;
   let messageLines = [];
   let images = [];
+  let isInitial = $state(true);
 
-  onMount(() => {
+  $effect(() => {
+    page.loadingComplete;
+    page.minLoadingComplete;
+
+    if (untrack(() => isInitial)) {
+      isInitial = false;
+      return;
+    }
+    if (!page.loadingComplete || !page.minLoadingComplete) return;
+
+    const delay = page.loaderDuration - 0.4;
     const duration = 0.8;
     const ease = CustomEase.create("custom", "0.42, 0, 0.58, 1");
     
-    gsap.timeline()
+    gsap.timeline({ delay })
     .from(images, {
       y: 100,
       opacity: 0,
@@ -33,7 +45,7 @@
         start: "top top",
         end: "bottom top",
         scrub: true,
-      }
+      },
     })
     .to(images[0], { yPercent: 40 }, 0)
     .to(images[1], { yPercent: -10 }, 0);
