@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: "main"
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -13,6 +13,7 @@ jobs:
 
       - name: Install and Build
         run: |
+          npm install
           npm run deploy
           
       - name: Deploy to GitHub Pages
