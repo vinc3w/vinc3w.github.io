@@ -5,6 +5,12 @@ on:
     branches: [main]
   workflow_dispatch:
 
+env:
+  PUBLIC_ENVIRONMENT: PROD
+  PUBLIC_URL: https://vinc3w.github.io/
+  ENVIRONMENT: PROD
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
