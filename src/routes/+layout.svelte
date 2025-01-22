@@ -1,7 +1,7 @@
 <script>
   import CustomEase from "gsap/dist/CustomEase";
-  import ScrollTrigger from "gsap/ScrollTrigger";
-  import ScrollToPlugin from "gsap/ScrollToPlugin";
+  import ScrollTrigger from "gsap/dist/ScrollTrigger";
+  import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
   import Header from "$lib/components/Header/Header.svelte";
   import Footer from "$lib/components/Footer/Footer.svelte";
   import RouteCover from "$lib/components/RouteCover/RouteCover.svelte";
