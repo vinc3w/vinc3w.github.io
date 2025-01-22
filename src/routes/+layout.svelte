@@ -6,12 +6,12 @@
   import Footer from "$lib/components/Footer/Footer.svelte";
   import RouteCover from "$lib/components/RouteCover/RouteCover.svelte";
   import Cursor from "$lib/components/Cursor/Cursor.svelte";
+  import pageState from "$lib/state/page.svelte";
   import { gsap } from "gsap";
   import { PUBLIC_ENVIRONMENT } from '$env/static/public';
-  import "./global.css";
-  import pageState from "$lib/state/page.svelte";
   import { page } from "$app/state";
   import { untrack } from "svelte";
+  import "./global.css";
 
   const { children } = $props();
   let isInitial = $state(true);
