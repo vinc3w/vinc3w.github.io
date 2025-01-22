@@ -3,6 +3,7 @@ const page = $state({
   loaderDuration: 0.7,
   minLoadingComplete: false,
   minLoadingDuration: 0.5,
+  previousUrl: null,
 });
 
 export default page;

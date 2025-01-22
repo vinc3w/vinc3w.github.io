@@ -69,7 +69,12 @@
   });
 </script>
 
-<div class="cover" bind:this={cover} style:--container-width={containerWidth + "rem"}>
+<div
+  class="cover"
+  bind:this={cover}
+  style:--container-width={containerWidth + "rem"}
+  style:display={page.previousUrl ? "none" : ""}
+>
   <div class="loader">{imageLoaded}</div>
   <svg class="curve" bind:this={svg}>
     <path bind:this={path}></path>

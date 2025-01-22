@@ -9,8 +9,12 @@
   import { gsap } from "gsap";
   import { PUBLIC_ENVIRONMENT } from '$env/static/public';
   import "./global.css";
+  import pageState from "$lib/state/page.svelte";
+  import { page } from "$app/state";
+  import { untrack } from "svelte";
 
   const { children } = $props();
+  let isInitial = $state(true);
 
   gsap.registerPlugin(CustomEase, ScrollToPlugin, ScrollTrigger);
 
@@ -21,6 +25,17 @@
     document.body.oncontextmenu = () => {
       return false;
     };
+  });
+
+  $effect(() => {
+    page.url;
+    
+    if (untrack(() => isInitial)) {
+      isInitial = false;
+      return;
+    }
+
+    pageState.previousUrl = page.url.pathname;
   });
 </script>
 
