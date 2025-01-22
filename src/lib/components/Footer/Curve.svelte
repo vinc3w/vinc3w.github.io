@@ -1,6 +1,6 @@
 <script>
   import gsap from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import ScrollTrigger from "gsap/ScrollTrigger";
   import { breakPoints, colors } from "$lib/contants/styles";
   import { page } from "$app/state";
 
