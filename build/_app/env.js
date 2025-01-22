@@ -1,1 +1,0 @@
-export const env={"PUBLIC_ENVIRONMENT":"DEV","PUBLIC_URL":"http://localhost:5173"}
