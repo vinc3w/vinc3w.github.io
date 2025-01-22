@@ -1,1 +1,1 @@
-export const env={"PUBLIC_ENVIRONMENT":"DEV","PUBLIC_URL":"http://localhost:5173"}
+export const env={"PUBLIC_ENVIRONMENT":"PROD","PUBLIC_URL":"https://vinc3w.github.io/"}
