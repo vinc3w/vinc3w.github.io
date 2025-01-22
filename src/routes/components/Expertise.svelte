@@ -1,6 +1,5 @@
 <script>
   import gsap from "gsap";
-  import ScrollTrigger from "gsap/ScrollTrigger";
   import { onMount } from "svelte";
 
   let container;
