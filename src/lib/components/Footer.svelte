@@ -1,6 +1,6 @@
 <script>
   import gsap from "gsap";
-  import CustomEase from "gsap/CustomEase";
+  import CustomEase from "gsap/dist/CustomEase";
   import ContactTitle from "$lib/assets/titles/ContactTitle.svelte";
   import {
     DISCORD,

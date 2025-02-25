@@ -1,6 +1,6 @@
 <script>
   import gsap from "gsap";
-  import CustomEase from "gsap/CustomEase";
+  import CustomEase from "gsap/dist/CustomEase";
   import StudioTitle from "$lib/assets/titles/StudioTitle.svelte";
   import { onMount } from "svelte";
 

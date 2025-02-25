@@ -1,7 +1,7 @@
 <script>
   import splt from "spltjs";
   import gsap from "gsap";
-  import CustomEase from "gsap/CustomEase";
+  import CustomEase from "gsap/dist/CustomEase";
   import { app } from "$lib/state/app.svelte";
 
   const { data } = $props();

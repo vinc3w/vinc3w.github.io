@@ -1,6 +1,6 @@
 <script>
   import gsap from "gsap";
-  import CustomEase from "gsap/CustomEase";
+  import CustomEase from "gsap/dist/CustomEase";
   import work from "$lib/data/work";
   import Link from "$lib/components/Link.svelte";
   import { WORK } from "$lib/constant/routes";

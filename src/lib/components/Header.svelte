@@ -1,6 +1,6 @@
 <script>
   import gsap from "gsap";
-  import CustomEase from "gsap/CustomEase";
+  import CustomEase from "gsap/dist/CustomEase";
   import Link from "./Link.svelte";
   import { ABOUT, HOME } from "$lib/constant/routes";
   import { MAILTO } from "$lib/constant/socials";

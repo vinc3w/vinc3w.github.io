@@ -1,6 +1,6 @@
 <script>
   import gsap from "gsap";
-  import CustomEase from "gsap/CustomEase";
+  import CustomEase from "gsap/dist/CustomEase";
   import { WORK } from "$lib/constant/routes";
   import { formatTitleToSlug } from "$lib/utils/general";
   import { app } from "$lib/state/app.svelte";

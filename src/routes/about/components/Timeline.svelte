@@ -1,6 +1,6 @@
 <script>
   import gsap from "gsap";
-  import CustomEase from "gsap/CustomEase";
+  import CustomEase from "gsap/dist/CustomEase";
   import TimelineTitle from "$lib/assets/titles/TimelineTitle.svelte";
   import about from "$lib/data/about";
   import { formatDateRange } from "$lib/utils/date";

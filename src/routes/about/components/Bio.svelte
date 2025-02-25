@@ -1,7 +1,7 @@
 <script>
   import gsap from "gsap";
   import splt from "spltjs";
-  import CustomEase from "gsap/CustomEase";
+  import CustomEase from "gsap/dist/CustomEase";
   import about from "$lib/data/about";
   import { onMount } from "svelte";
 

@@ -1,6 +1,6 @@
 <script>
   import gsap from "gsap";
-  import CustomEase from "gsap/CustomEase";
+  import CustomEase from "gsap/dist/CustomEase";
   import FeaturesTitle from "$lib/assets/titles/FeaturesTitle.svelte";
   import { app } from "$lib/state/app.svelte";
 

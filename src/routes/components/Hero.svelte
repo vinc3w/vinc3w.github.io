@@ -1,6 +1,6 @@
 <script>
   import gsap from "gsap";
-  import CustomEase from "gsap/CustomEase";
+  import CustomEase from "gsap/dist/CustomEase";
   import StudioTitleAnim from "$lib/components/StudioTitleAnim.svelte";
   import ArrowDown from "$lib/assets/icons/ArrowDown.svelte";
   import about from "$lib/data/about";
