@@ -1,0 +1,1 @@
+function r(a,n){const e=new Date(a*1e3),t=new Date(n*1e3);return Math.floor((t.getFullYear()+e.getFullYear())/2)}function g(a,n){const e=new Date(a*1e3),t=new Date(n*1e3),o=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return`${o[e.getMonth()]} ${e.getFullYear()} - ${o[t.getMonth()]} ${t.getFullYear()}`}export{g as f,r as g};

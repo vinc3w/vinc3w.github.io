@@ -1,0 +1,1 @@
+const s="https://www.instagram.com/vinc3w59/",t="@vinc3w59",c="https://discord.com/users/582932383381192705",n="https://www.linkedin.com/in/vincenthar/",o="https://github.com/vinc3w",a="https://wa.link/729ob4",i="+60 18-202 1113",w="vinc3w59@gmail.com",m="mailto:vinc3w59@gmail.com";export{c as D,w as E,o as G,t as I,n as L,m as M,i as P,a as W,s as a};
