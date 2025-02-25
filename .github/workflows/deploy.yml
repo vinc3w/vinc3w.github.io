@@ -10,7 +10,6 @@ permissions:
 env:
   PUBLIC_ENVIRONMENT: prod
   ENVIRONMENT: prod
-  BASE_URL: 
 
 jobs:
   build:

@@ -10,7 +10,7 @@ const config = {
 			fallback: "error.html",
 		}),
 		paths: {
-			base: process.env.ENVIRONMENT === "prod" ? process.env.BASE_URL : "",
+			base: "",
 		},
 	}
 };
