@@ -1,0 +1,12 @@
+export const INSTAGRAM = "https://www.instagram.com/vinc3w59/";
+export const INSTAGRAM_HANDLE = "@vinc3w59";
+export const DISCORD = "https://discord.com/users/582932383381192705";
+export const SPOTIFY = "https://open.spotify.com/user/f8sifsire8pgeu635j5n4b2zh";
+export const LINKEDIN = "https://www.linkedin.com/in/vincenthar/";
+export const GITHUB = "https://github.com/vinc3w";
+export const ROBLOX = "https://www.roblox.com/users/2289176113/profile";
+export const WHATSAPP = "https://wa.link/729ob4";
+export const PHONE_NUMBER = "+60 18-202 1113";
+export const EMAIL_ADDRESS = "vinc3w59@gmail.com";
+export const MAILTO = "mailto:vinc3w59@gmail.com";
+export const RESUME = "/documents/resume.pdf";
