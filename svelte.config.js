@@ -10,7 +10,7 @@ const config = {
 			fallback: "error.html",
 		}),
 		paths: {
-			base: "/",
+			base: "",
 		},
 	}
 };
