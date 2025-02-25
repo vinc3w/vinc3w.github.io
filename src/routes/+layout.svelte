@@ -3,7 +3,7 @@
   import Footer from "$lib/components/Footer.svelte";
   import Header from "$lib/components/Header.svelte";
   import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
   import { page } from "$app/state";
   import { onMount } from "svelte";
   import { app } from "$lib/state/app.svelte";
