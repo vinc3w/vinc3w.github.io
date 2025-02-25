@@ -10,6 +10,7 @@ permissions:
 env:
   PUBLIC_ENVIRONMENT: prod
   ENVIRONMENT: prod
+  BASE_URL: https://vinc3w.github.io
 
 jobs:
   build:
