@@ -47,4 +47,10 @@
   :global(.bio .reveal) {
     transform: translateY(100%);
   }
+
+  @media (Width <= 1000px) {
+    .bio {
+      font-size: 16px;
+    }
+  }
 </style>

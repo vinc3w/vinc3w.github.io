@@ -26,13 +26,13 @@
 
     .to(title, {
       y: 0,
-      duration: 1,
+      duration: 0.8,
       ease,
     }, 0)
 
     .to(keyword, {
       y: 0,
-      duration: 1,
+      duration: 0.8,
       ease,
     }, 0);
   });
@@ -90,7 +90,7 @@
   .title span,
   .keyword span {
     display: block;
-    transform: translateY(100%);
+    transform: translateY(110%);
   }
 
   img {
@@ -98,5 +98,15 @@
     width: 100%;
     object-fit: cover;
     object-position: center;
+  }
+
+  @media (width <= 1000px) {
+    .title {
+      font-size: 64px;
+    }
+
+    .keyword span {
+      font-size: 16px;
+    }
   }
 </style>

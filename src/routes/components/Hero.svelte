@@ -88,6 +88,21 @@
   :global(.hero .scroll-indicator path) {
     stroke: var(--foreground);
   }
+
+  @media (Width <= 1000px) {
+    .start {
+      display: flex;
+    }
+
+    .next-section-title {
+      display: none;
+    }
+
+    .end {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
   
   @keyframes hover-vertical {
     0% {

@@ -108,4 +108,16 @@
   .item .value {
     grid-column: 3 / 5;
   }
+
+  @media (width <= 1000px) {
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .item .label {
+      font-weight: bold;
+    }
+  }
 </style>

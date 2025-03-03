@@ -12,6 +12,10 @@
 </div>
 
 <style>
+  .title {
+    grid-column: 1 / 3;
+  }
+
   .skills {
     border-top: 1px solid var(--foreground);
     padding-top: 32px;

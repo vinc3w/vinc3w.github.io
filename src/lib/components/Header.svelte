@@ -21,14 +21,16 @@
 
 <header class="grid" bind:this={header}>
   <a href={HOME} class="title">vinc3w</a>
-  <nav>
-    <ul>
-      <li><Link href={HOME}>works</Link></li>
-      <li><Link href={ABOUT}>about</Link></li>
-      <li><a href={MAILTO} target="_blank">contact</a></li>
-    </ul>
-  </nav>
-  <a class="lets-talk" href={MAILTO} target="_blank">Let's Talk</a>
+  <div class="end">
+    <nav>
+      <ul>
+        <li><Link href={HOME}>works</Link></li>
+        <li><Link href={ABOUT}>about</Link></li>
+        <li><a href={MAILTO} target="_blank">contact</a></li>
+      </ul>
+    </nav>
+    <a class="lets-talk" href={MAILTO} target="_blank">Let's Talk</a>
+  </div>
 </header>
 
 <style>
@@ -46,8 +48,20 @@
     margin-right: 8px;
   }
 
-  .lets-talk {
-    grid-column: 4 / 5;
-    place-self: start end;
+  .end {
+    grid-column: 3 / 5;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (width <= 1000px) {
+    header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .lets-talk {
+      display: none;
+    }
   }
 </style>

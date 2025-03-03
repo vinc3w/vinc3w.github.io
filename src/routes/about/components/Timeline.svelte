@@ -90,4 +90,17 @@
   .timeline .item:last-of-type {
     border-bottom: 1px solid var(--foreground);
   }
+
+  @media (width <= 1000px) {
+    .timeline .item {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .timeline .item div:first-of-type {
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+  }
 </style>

@@ -115,4 +115,16 @@
     justify-content: space-between;
     align-items: flex-start;
   }
+
+  @media (width <= 1000px) {
+    .content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .end {
+      flex-direction: column;
+      gap: 32px;
+    }
+  }
 </style>

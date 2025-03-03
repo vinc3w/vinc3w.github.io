@@ -75,6 +75,7 @@
 
   .context .label,
   .tools .label {
+    grid-column: 1 / 3;
     font-weight: bold;
   }
 

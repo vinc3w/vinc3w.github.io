@@ -55,4 +55,14 @@
   :global(.work .reveal) {
     transform: translateY(100%);
   }
+
+  @media (width <= 1000px) {
+    .title {
+      font-size: 64px;
+    }
+    
+    .description .item {
+      grid-column: 1 / 5;
+    }
+  }
 </style>
