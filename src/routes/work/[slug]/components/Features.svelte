@@ -82,7 +82,7 @@
   }
 
   .title {
-    margin: 32px 0 64px 0;
+    margin: 64px 0 64px 0;
     overflow-y: hidden;
   }
 

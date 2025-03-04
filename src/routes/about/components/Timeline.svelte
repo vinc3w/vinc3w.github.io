@@ -62,6 +62,7 @@
 <style>
   .title {
     overflow-y: hidden;
+    margin-top: 64px;
   }
 
   .title .content {
