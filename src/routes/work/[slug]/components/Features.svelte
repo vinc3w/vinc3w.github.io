@@ -67,7 +67,9 @@
     display: flex;
     flex-direction: column;
     gap: 64px;
+    max-width: 100vw;
   }
+
   :global(.work .hero .scroll-indicator svg) {
     display: block;
     height: 32px;
