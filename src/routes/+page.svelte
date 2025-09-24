@@ -1,0 +1,18 @@
+<script>
+  import PageSetup from "$lib/components/page-setup/PageSetup.svelte";
+  import Hero from "./components/hero/Hero.svelte";
+  import About from "./components/about/About.svelte";
+  import Highlights from "./components/highlights/Highlights.svelte";
+  import CTA from "$lib/components/cta/CTA.svelte";
+</script>
+
+<svelte:head>
+	<title>Home | Vinc3w</title>
+</svelte:head>
+
+<PageSetup />
+
+<Hero />
+<About />
+<Highlights />
+<CTA />
