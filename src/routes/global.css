@@ -23,6 +23,7 @@
   --overlay-dark: rgba(0, 0, 0, 0.3);
 
   --x-padding: 128px;
+  --header-y-padding: 64px;
   --header-height: 153px;
   --section-border-radius: 24px;
 }
@@ -30,6 +31,8 @@
 @media (width <= 1500px) {
   :root {
     --x-padding: 64px;
+    --header-y-padding: 32px;
+    --header-height: 89px;
   }
 }
 

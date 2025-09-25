@@ -64,7 +64,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 64px var(--x-padding);
+    padding: var(--header-y-padding) var(--x-padding);
     position: fixed;
     top: 0;
     left: 0;
