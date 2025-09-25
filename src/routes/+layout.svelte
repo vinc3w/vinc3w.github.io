@@ -17,7 +17,6 @@
 	import "./global.css";
 
 	let { children } = $props();
-	let refreshFooter = $state();
 
 	gsap.registerPlugin(
 		ScrollTrigger,
@@ -36,13 +35,6 @@
 			app.fonts.ready = true;
 		});
 	});
-
-	$effect(() => {
-		app.navigation.inProcess;
-		untrack(() => {
-			if (!app.navigation.inProcess) refreshFooter = !refreshFooter;
-		})
-	})
 
   onNavigate(async ({ from, to }) => {
 		// In case when the query ?=<...> is changed
@@ -68,12 +60,8 @@
 
 <div id="smooth-wrapper">
 	<div id="smooth-content">
-		<main>
-			{@render children?.()}
-		</main>
-		{#key refreshFooter}
-			<Footer />
-		{/key}
+		<main>{@render children?.()}</main>
+		<Footer />
 	</div>
 </div>
 
