@@ -54,24 +54,12 @@
           start: "top 50%",
         },
       });
-
-      gsap.to(boxShadow, {
-        opacity: 0,
-        ease: "expoScale(0.5,7,none)",
-        scrollTrigger: {
-          trigger: boxShadow,
-          start: `top bottom-=${footer.offsetHeight / 2}px`,
-          end: "top top+=158px",
-          scrub: true,
-        },
-      });
     });
 
     return () => ctx.kill();
   });
 </script>
 
-<div bind:this={boxShadow} class="box-shadow"></div>
 <footer bind:this={footer}>
   <div bind:this={footerContent} class="footer-content">
     <div class="start">
@@ -113,10 +101,6 @@
 </footer>
 
 <style>
-  .box-shadow {
-    box-shadow: 0 0 200px 40px var(--black);
-  }
-
   footer {
     height: calc(100vh - var(--header-height));
     overflow: hidden;

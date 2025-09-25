@@ -15,6 +15,7 @@
   import { app } from "$lib/states/app.svelte";
 
 	import "./global.css";
+  import FooterShadow from "$lib/components/cta/Shadow.svelte";
 
 	let { children } = $props();
 	let refreshFooter = $state();
@@ -70,6 +71,7 @@
 	<div id="smooth-content">
 		<main>
 			{@render children?.()}
+			<FooterShadow />
 		</main>
 		{#key refreshFooter}
 			<Footer />
