@@ -6,6 +6,7 @@
   import Philosophy from "./components/philosophy/Philosophy.svelte";
   import CtaDivider from "$lib/components/cta/CTADivider.svelte";
   import CTA from "$lib/components/cta/CTA.svelte";
+  import FooterShadow from "$lib/components/footer/Shadow.svelte";
 </script>
 
 <svelte:head>
@@ -20,3 +21,4 @@
 <Philosophy />
 <CtaDivider />
 <CTA />
+<FooterShadow />

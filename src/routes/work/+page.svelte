@@ -3,6 +3,7 @@
 	import Hero from "./components/hero/Hero.svelte";
   import Works from "./components/works/Works.svelte";
   import CTA from "$lib/components/cta/CTA.svelte";
+  import FooterShadow from "$lib/components/footer/Shadow.svelte";
 </script>
 
 <svelte:head>
@@ -14,3 +15,4 @@
 <Hero />
 <Works />
 <CTA />
+<FooterShadow />

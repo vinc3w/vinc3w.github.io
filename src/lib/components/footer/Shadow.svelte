@@ -25,5 +25,7 @@
 <style>
   .box-shadow {
     box-shadow: 0 0 200px 40px var(--black);
+    position: relative;
+    z-index: 50;
   }
 </style>

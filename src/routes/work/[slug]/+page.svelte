@@ -5,6 +5,7 @@
   import Gallery from "./components/gallery/Gallery.svelte";
   import Next from "./components/next/Next.svelte";
   import CTA from "$lib/components/cta/CTA.svelte";
+  import FooterShadow from "$lib/components/footer/Shadow.svelte";
   
   import { setupPage } from "$lib/utils/app";
 
@@ -31,3 +32,4 @@
   <Next {data} />
 {/key}
 <CTA />
+<FooterShadow />

@@ -4,6 +4,7 @@
   import About from "./components/about/About.svelte";
   import Highlights from "./components/highlights/Highlights.svelte";
   import CTA from "$lib/components/cta/CTA.svelte";
+  import FooterShadow from "$lib/components/footer/Shadow.svelte";
 </script>
 
 <svelte:head>
@@ -16,3 +17,4 @@
 <About />
 <Highlights />
 <CTA />
+<FooterShadow />

@@ -16,6 +16,12 @@
   src: url("$lib/fonts/Poppins-Bold.ttf");
 }
 
+@font-face {
+  font-family: "Poppins";
+  font-weight: 900;
+  src: url("$lib/fonts/Poppins-Black.ttf");
+}
+
 :root {
   --white: #FFFFFF;
   --black: #1D1D1B;
