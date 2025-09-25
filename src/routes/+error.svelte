@@ -5,7 +5,6 @@
 
   import { page } from "$app/state";
   import { HOME_ROUTE } from "$lib/data/routes";
-  import CTA from "$lib/components/cta/CTA.svelte";
 </script>
 
 <PageSetup />
