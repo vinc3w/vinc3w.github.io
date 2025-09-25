@@ -43,7 +43,7 @@
         ease: "expo.out",
         scrollTrigger: {
           trigger: bigContactContainer,
-          start: "bottom bottom",
+          start: "50% bottom",
         },
       });
     });
