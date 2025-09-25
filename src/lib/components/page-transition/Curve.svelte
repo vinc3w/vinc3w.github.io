@@ -14,6 +14,10 @@
     
     if (isOnMount) return isOnMount = false;
 
+    const onStart = () => svg.style.display = "initial";
+    const onComplete = () => svg.style.display = "none";
+
+    onStart();
     const height = svg.clientHeight;
     const width = window.innerWidth;
     const ease = CustomEase.create("custom", "0.76, 0, 0.24, 1");
@@ -22,7 +26,7 @@
       const initialPath = `M 0 ${height} Q ${width / 2} ${height} ${width} ${height}`;
       const targetPath = `M 0 ${height} Q ${width / 2} 0 ${width} ${height}`;
 
-      gsap.timeline()
+      gsap.timeline({ onComplete })
       .to(path, {
         attr: { d: initialPath },
         duration: 0,
@@ -41,7 +45,7 @@
       const initialPath = `M 0 0 Q ${width / 2} 0 ${width} 0`;
       const targetPath = `M 0 0 Q ${width / 2} ${height} ${width} 0`;
 
-      gsap.timeline()
+      gsap.timeline({ onComplete })
       .to(path, {
         attr: { d: initialPath },
         duration: 0,
@@ -74,8 +78,9 @@
 
   svg {
     position: absolute;
-    width: 100%;
     height: 80px;
+    width: 100%;
+    /* display: none; */
   }
 
   .curve-container.top svg {
