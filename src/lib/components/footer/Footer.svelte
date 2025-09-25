@@ -16,80 +16,118 @@
   import { ScrollSmoother } from "gsap/ScrollSmoother";
 
   let footer;
+  let footerContent;
   let bigContactContainer;
   let bigContact;
+  let boxShadow;
 
   function scrollToTop() {
     ScrollSmoother.get().scrollTo(0, true);
   }
 
   onMount(() => {
-    const animation1 = ScrollTrigger.create({
-      trigger: footer,
-      start: "bottom bottom",
-      end: "+=100%",
-      pin: true,
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: footer,
+        start: "bottom bottom",
+        end: "bottom+=100% bottom",
+        pin: true,
+      });
+
+      gsap.to(footerContent, {
+        y: 0,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: footer,
+          start: "bottom bottom",
+          end: "bottom+=100% bottom",
+          scrub: true,
+        },
+      });
+
+      gsap.to(bigContact, {
+        y: 0,
+        duration: 5,
+        ease: "expo.out",
+        scrollTrigger: {
+          trigger: bigContactContainer,
+          start: "top 50%",
+        },
+      });
+
+      gsap.to(boxShadow, {
+        opacity: 0,
+        ease: "expoScale(0.5,7,none)",
+        scrollTrigger: {
+          trigger: boxShadow,
+          start: `top bottom-=${footer.offsetHeight / 2}px`,
+          end: "top top+=158px",
+          scrub: true,
+        },
+      });
     });
 
-    const animation2 = gsap.to(bigContact, {
-      y: 0,
-      duration: 5,
-      ease: "expo.out",
-      scrollTrigger: {
-        trigger: bigContactContainer,
-        start: "top 50%",
-      },
-    });
-
-    return () => {
-      animation1.kill();
-      animation2.kill();
-    }
+    return () => ctx.kill();
   });
 </script>
 
+<div bind:this={boxShadow} class="box-shadow"></div>
 <footer bind:this={footer}>
-  <div class="start">
-    <section>
-      <div class="contact">
-        <div class="title">Let's Talk</div>
-        <ButtonLink
-          href={EMAIL_LINK}
-          target="_blank"
-          backgroundColor="overlay-light"
-        >
-          Email
-        </ButtonLink>
-      </div>
+  <div bind:this={footerContent} class="footer-content">
+    <div class="start">
+      <section>
+        <div class="contact">
+          <div class="title">Let's Talk</div>
+          <ButtonLink
+            href={EMAIL_LINK}
+            target="_blank"
+            backgroundColor="overlay-light"
+          >
+            Email
+          </ButtonLink>
+        </div>
+        <button class="scroll-top" onclick={scrollToTop}>
+          <UpArrow width={20} />
+        </button>
+      </section>
+      <section>
+        <div class="title">Follow Me</div>
+        <ul>
+          <li><a href={INSTAGRAM_LINK} target="_blank">Instagram</a></li>
+          <li><a href={LINKEDIN_LINK} target="_blank">LinkedIn</a></li>
+          <li><a href={GITHUB_LINK} target="_blank">Github</a></li>
+        </ul>
+      </section>
       <button class="scroll-top" onclick={scrollToTop}>
         <UpArrow width={20} />
       </button>
-    </section>
-    <section>
-      <div class="title">Follow Me</div>
-      <ul>
-        <li><a href={INSTAGRAM_LINK} target="_blank">Instagram</a></li>
-        <li><a href={LINKEDIN_LINK} target="_blank">LinkedIn</a></li>
-        <li><a href={GITHUB_LINK} target="_blank">Github</a></li>
-      </ul>
-    </section>
-    <button class="scroll-top" onclick={scrollToTop}>
-      <UpArrow width={20} />
-    </button>
-  </div>
-  <div class="end">
-    <div bind:this={bigContactContainer} class="big-contact-container">
-      <a bind:this={bigContact} class="big-contact" href={EMAIL_LINK} target="_blank">
-        <ContactText fill="overlay-light" />
-      </a>
+    </div>
+    <div class="end">
+      <div bind:this={bigContactContainer} class="big-contact-container">
+        <a bind:this={bigContact} class="big-contact" href={EMAIL_LINK} target="_blank">
+          <ContactText fill="overlay-light" />
+        </a>
+      </div>
     </div>
   </div>
 </footer>
 
 <style>
+  .box-shadow {
+    box-shadow: 0 0 200px 40px var(--black);
+  }
+
   footer {
     height: calc(100vh - var(--header-height));
     overflow: hidden;
+    /* For footer reveal animation */
+    margin-top: calc((100vh - var(--header-height)) * -1);
+    position: relative;
+    z-index: -1;
+  }
+
+  .footer-content {
+    height: 100%;
     background-color: var(--black);
     color: var(--white);
     padding: 128px var(--x-padding) 80px var(--x-padding);
@@ -97,11 +135,7 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 128px;
-
-    /* For footer reveal animation */
-    margin-top: calc((100vh - var(--header-height)) * -1);
-    position: relative;
-    z-index: -1;
+    transform: translateY(256px);
   }
 
   a,
