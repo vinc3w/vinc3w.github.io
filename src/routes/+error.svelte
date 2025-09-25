@@ -20,7 +20,7 @@
       duration: 1.2,
       ease: "power4.out",
       delay,
-    })
+    });
   });
 </script>
 
