@@ -15,7 +15,7 @@
   
   onMount(() => {
     gsap.from(workElements, {
-      scale: 0.9,
+      scale: 0.95,
       opacity: 0,
       duration: 0.8,
       ease: "power4.out",
