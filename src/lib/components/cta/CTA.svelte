@@ -3,22 +3,9 @@
   import TextReveal from "../text-reveal/TextReveal.svelte";
   
   import { EMAIL_LINK } from "$lib/data/links";
-  import { onMount } from "svelte";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  let cta;
-
-  onMount(() => {
-    ScrollTrigger.create({
-      trigger: cta,
-      start: "top top",
-      end: "+=50%",
-      pin: true,
-    });
-  });
 </script>
 
-<div bind:this={cta} class="cta">
+<div class="cta">
   <div class="text-container grid-layout">
     <div class="text">
       <TextReveal duration={0.6} stagger={0.02}>
