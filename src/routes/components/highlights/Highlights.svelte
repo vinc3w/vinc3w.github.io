@@ -30,23 +30,35 @@
 
 <div class="highlight-container">
   <div class="highlights">
-    <HorizontalScrollTitle>
+    <div class="horizontal-scroll-title">
+      <HorizontalScrollTitle>
+        <HighlightsText />
+      </HorizontalScrollTitle>
+    </div>
+    <div class="normal-title">
       <HighlightsText />
-    </HorizontalScrollTitle>
+    </div>
     <div class="works">
       {#each highlightedWorks as work, i}
-      {@const href = `${WORK_ROUTE}/${encodeWorkName(work.name)}`}
-      <a
-        bind:this={workElements[i]}
-        onclick={e => handleLinkClick(e, href)}
-        {href}
-        class="work"
-      >
-        <ParallaxImage src={work.thumbnail} alt={work.name} offset={64} />
-        <div class="info">
-          <div class="name">{work.name}</div>
-        </div>
-      </a>
+        {@const href = `${WORK_ROUTE}/${encodeWorkName(work.name)}`}
+        <a
+          bind:this={workElements[i]}
+          onclick={e => handleLinkClick(e, href)}
+          {href}
+          class="work"
+        >
+          <div class="thumbnail-container">
+            <div class="large-screen">
+              <ParallaxImage src={work.thumbnail.portrait || work.thumbnail.landscape} alt={work.name} />
+            </div>
+            <div class="small-screen">
+              <ParallaxImage src={work.thumbnail.landscape} alt={work.name} aspectRatio="6 / 4" />
+            </div>
+          </div>
+          <div class="info">
+            <div class="name">{work.name}</div>
+          </div>
+        </a>
       {/each}
     </div>
     <div class="button-container grid-layout">
@@ -62,6 +74,10 @@
     background-color: var(--black);
     position: relative;
     z-index: 100;
+  }
+
+  .normal-title {
+    display: none;
   }
 
   .highlights {
@@ -88,6 +104,10 @@
     transform: scale(0.98) !important;
   }
 
+  .work .thumbnail-container .small-screen {
+    display: none;
+  }
+
   .work .info {
     position: absolute;
     inset: 0 0 0 0;
@@ -108,8 +128,25 @@
   }
 
   @media (width <= 1000px) {
+    .horizontal-scroll-title {
+      display: none;
+    }
+
+    .normal-title {
+      display: initial;
+    }
+
     .works {
       flex-direction: column;
+      margin-top: 128px;
+    }
+
+    .work .thumbnail-container .small-screen {
+      display: initial;
+    }
+
+    .work .thumbnail-container .large-screen {
+      display: none;
     }
 
     .work:hover {

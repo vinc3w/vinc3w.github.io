@@ -24,12 +24,18 @@ export const tags = [
 export const highlightedWorks = [
   {
     name: "DimeDuck",
-    thumbnail: "https://raw.githubusercontent.com/vinc3w/DimeDuck/refs/heads/master/assets/main.png",
+    thumbnail: {
+      portrait: null,
+      landscape: "https://raw.githubusercontent.com/vinc3w/DimeDuck/refs/heads/master/assets/main.png",
+    },
     shortDescription: "An app designed to help you take control of your finances.",
   },
   {
     name: "JobHub",
-    thumbnail: "https://raw.githubusercontent.com/vinc3w/JobHub/refs/heads/master/assets/main-portrait.png",
+    thumbnail: {
+      portrait: "https://raw.githubusercontent.com/vinc3w/JobHub/refs/heads/master/assets/main-portrait.png",
+      landscape: "https://raw.githubusercontent.com/vinc3w/JobHub/refs/heads/master/assets/main-landscape.png",
+    },
     shortDescription: "A platform designed to help employers find and connect with skilled employees quickly and efficiently.",
   },
 ];
