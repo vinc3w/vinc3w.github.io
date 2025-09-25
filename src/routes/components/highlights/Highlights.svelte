@@ -81,7 +81,7 @@
     width: 100%;
     position: relative;
     height: fit-content;
-    transition: transform 70ms linear;
+    transition: transform 140ms ease-in-out;
   }
 
   .work:hover {
