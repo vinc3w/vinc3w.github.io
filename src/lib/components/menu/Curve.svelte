@@ -4,8 +4,7 @@
   
   import { menu } from "$lib/states/menu.svelte";
 
-  const height = 80;
-
+  let svg;
   let path;
   let isOnMount = true;
 
@@ -14,6 +13,7 @@
 
     if (isOnMount) return isOnMount = false;
 
+    const height = svg.clientHeight;
     const width = window.innerWidth;
     const initialPath = `M 0 0 Q ${width / 2} 0 ${width} 0`;
     const targetPath = `M 0 0 Q ${width / 2} ${height} ${width} 0`;
@@ -38,7 +38,7 @@
 </script>
 
 <div class="curve-container">
-  <svg class="curve" style:height={height + "px"}>
+  <svg bind:this={svg}>
     <path bind:this={path} />
   </svg>
 </div>
@@ -53,9 +53,16 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 80px;
   }
 
   path {
     fill: var(--black);
+  }
+
+  @media (width <= 800px) {
+    svg {
+      height: 40px;
+    }
   }
 </style>

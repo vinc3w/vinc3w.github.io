@@ -5,8 +5,7 @@
 
   let { position="top" } = $props();
 
-  const height = 80;
-
+  let svg;
   let path;
   let isOnMount = true;
 
@@ -15,6 +14,7 @@
     
     if (isOnMount) return isOnMount = false;
 
+    const height = svg.clientHeight;
     const width = window.innerWidth;
     const ease = CustomEase.create("custom", "0.76, 0, 0.24, 1");
 
@@ -61,7 +61,7 @@
 </script>
 
 <div class={`curve-container ${position}`} >
-  <svg class="curve" style:height={height + "px"}>
+  <svg bind:this={svg}>
     <path bind:this={path} />
   </svg>
 </div>
@@ -75,6 +75,7 @@
   svg {
     position: absolute;
     width: 100%;
+    height: 80px;
   }
 
   .curve-container.top svg {
@@ -89,5 +90,11 @@
 
   path {
     fill: var(--black);
+  }
+
+  @media (width <= 800px) {
+    svg {
+      height: 40px;
+    }
   }
 </style>
