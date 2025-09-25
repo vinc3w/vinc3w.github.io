@@ -22,7 +22,7 @@ export function getToPageName(to) {
   );
 }
 
-export async function handleLinkClick(e, href) {
+export function handleLinkClick(e, href) {
   e.preventDefault();
   if (page.url.pathname === href) return;
   app.navigation.inProcess = true;
