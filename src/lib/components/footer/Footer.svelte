@@ -27,20 +27,12 @@
 
   onMount(() => {
     const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: footer,
-        start: "bottom bottom",
-        end: "bottom+=100% bottom",
-        pin: true,
-      });
-
       gsap.to(footerContent, {
         y: 0,
-        ease: "power1.out",
         scrollTrigger: {
           trigger: footer,
-          start: "bottom bottom",
-          end: "bottom+=100% bottom",
+          start: "top bottom",
+          end: "bottom bottom",
           scrub: true,
         },
       });
@@ -51,7 +43,7 @@
         ease: "expo.out",
         scrollTrigger: {
           trigger: bigContactContainer,
-          start: "top 50%",
+          start: "bottom bottom",
         },
       });
     });
@@ -102,12 +94,10 @@
 
 <style>
   footer {
-    height: calc(100vh - var(--header-height));
+    --height: calc(100vh - var(--header-height));
+
+    height: var(--height);
     overflow: hidden;
-    /* For footer reveal animation */
-    margin-top: calc((100vh - var(--header-height)) * -1);
-    position: relative;
-    z-index: -1;
   }
 
   .footer-content {
@@ -119,7 +109,8 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 128px;
-    transform: translateY(256px);
+    /* Only -50% does not work for some reason */
+    transform: translateY(-49%);
   }
 
   a,
