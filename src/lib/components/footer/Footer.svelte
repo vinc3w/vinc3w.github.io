@@ -166,6 +166,20 @@
     transform: translateY(-100%);
   }
 
+  @media (width <= 1500px) {
+    .footer-content {
+      padding-top: 80px;
+      padding-bottom: 48px;
+    }
+  }
+
+  @media (width <= 700px) {
+    .footer-content {
+      padding-top: 48px;
+      padding-bottom: 16px;
+    }
+  }
+
   @media (width <= 600px) {
     .start {
       flex-direction: column;
