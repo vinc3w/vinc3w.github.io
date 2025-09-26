@@ -2,10 +2,10 @@
   import gsap from "gsap";
   
   import { HOME_ROUTE } from "$lib/data/routes";
-  import { menu } from "$lib/states/menu.svelte";
   import { ScrollSmoother } from "gsap/ScrollSmoother";
   import { goto } from "$app/navigation";
   import { handleLinkClick } from "$lib/utils/url";
+  import { app } from "$lib/states/app.svelte";
 
   const startDuration = 0.1;
   const endDuration = 0.2;
@@ -14,15 +14,15 @@
   let isOnMount = true;
 
   function toggleMenu() {
-    menu.show = !menu.show;
+    app.menu.show = !app.menu.show;
   }
 
   $effect(() => {
-    menu.show;
+    app.menu.show;
 
     if (isOnMount) return isOnMount = false;
 
-    if (menu.show) {
+    if (app.menu.show) {
       gsap.to(hamburger.children[0], {
         keyframes: [
           { y: 4, duration: startDuration },
@@ -46,7 +46,7 @@
   });
 </script>
 
-<header>
+<header class:menu-open={app.menu.isOpen}>
   <a onclick={e => handleLinkClick(e, HOME_ROUTE)} href={HOME_ROUTE}>vinc3w</a>
   <button
     bind:this={hamburger}
@@ -71,6 +71,18 @@
     z-index: 1000;
     width: 100vw;
     mix-blend-mode: difference;
+  }
+
+  header.menu-open {
+    mix-blend-mode: normal;
+  }
+
+  header.menu-open a {
+    color: var(--black);
+  }
+
+  header.menu-open .hamburger .line {
+    background-color: var(--black);
   }
 
   a {

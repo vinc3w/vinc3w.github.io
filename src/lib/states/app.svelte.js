@@ -7,4 +7,8 @@ export const app = $state({
   },
   loadingTransitionMS: 1000,
   loadingDurationMS: 1400,
+  menu: {
+    isOpen: false,
+    show: false,
+  },
 });

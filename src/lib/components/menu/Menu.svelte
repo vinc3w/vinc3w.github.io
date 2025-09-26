@@ -5,9 +5,9 @@
 
   import { EMAIL_LINK } from "$lib/data/links";
   import { ABOUT_ROUTE, HOME_ROUTE, WORK_ROUTE } from "$lib/data/routes";
-  import { menu } from "$lib/states/menu.svelte";
   import { page } from "$app/state";
   import { handleLinkClick } from "$lib/utils/url";
+  import { app } from "$lib/states/app.svelte";
 
   const ease = CustomEase.create("custom", "0.76, 0, 0.24, 1");
 
@@ -18,21 +18,23 @@
   let isOnMount = true;
 
   $effect(() => {
-    menu.show;
+    app.menu.show;
 
     if (isOnMount) return isOnMount = false;
 
-    if (menu.show) document.body.style.overflow = "hidden";
+    if (app.menu.show) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "initial";
 
     gsap.to(nav, {
-      y: menu.show ? 0 : "-100%",
+      y: app.menu.show ? 0 : "-100%",
       duration: 1,
       ease,
+      onStart: () => app.menu.isOpen = true,
+      onComplete: () => !app.menu.show && (app.menu.isOpen = false),
     });
 
     gsap.to(backdrop, {
-      opacity: menu.show ? 0.2 : 0,
+      opacity: app.menu.show ? 0.2 : 0,
       duration: 1,
       ease,
       onStart: () => backdrop.style.display = "initial",
@@ -40,7 +42,7 @@
     });
 
     links.forEach(link => link.onclick = () => {
-      menu.show = false;
+      app.menu.show = false;
     });
   });
 </script>
@@ -96,7 +98,7 @@
     position: fixed;
     inset: 0 0 0 0;
     z-index: 900;
-    background-color: var(--black);
+    background-color: var(--menu-bg);
     transform: translateY(-100%);
   }
 
@@ -106,12 +108,13 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    gap: 32px;
+    gap: 24px;
   }
   
   a {
     display: block;
-    color: var(--white);
+    color: var(--black);
+    text-transform: uppercase;
     font-size: 80px;
     font-weight: bold;
     line-height: 100%;

@@ -1,15 +1,14 @@
 <script>
   import gsap from "gsap";
   import CustomEase from "gsap/CustomEase";
+  import { app } from "$lib/states/app.svelte";
   
-  import { menu } from "$lib/states/menu.svelte";
-
   let svg;
   let path;
   let isOnMount = true;
 
   $effect(() => {
-    menu.show;
+    app.menu.show;
 
     if (isOnMount) return isOnMount = false;
 
@@ -26,12 +25,12 @@
     })
     .to(path, {
       attr: { d: targetPath },
-      duration: menu.show ? 0.6 : 0.4,
+      duration: app.menu.show ? 0.6 : 0.4,
       ease,
     })
     .to(path, {
       attr: { d: initialPath },
-      duration: menu.show ? 0.4 : 0.6,
+      duration: app.menu.show ? 0.4 : 0.6,
       ease,
     });
   });
@@ -57,7 +56,7 @@
   }
 
   path {
-    fill: var(--black);
+    fill: var(--menu-bg);
   }
 
   @media (width <= 800px) {
