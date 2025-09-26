@@ -61,13 +61,14 @@
 
   @media (width <= 750px) {
     .text {
-      grid-column: span 10;
+      grid-column: span 8;
     }
   }
 
   @media (width <= 550px) {
-    .text {
-      grid-column: span 12;
+    .about {
+      display: flex;
+      flex-direction: column;
     }
   }
 </style>

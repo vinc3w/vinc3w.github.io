@@ -52,8 +52,8 @@
   }
 
   @media (width <= 550px) {
-    .text {
-      grid-column: span 12;
+    .text-container {
+      display: block;
     }
   }
 </style>

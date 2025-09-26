@@ -75,7 +75,7 @@
 
   @media (width <= 600px) {
     .title {
-      width: 150vw;
+      width: 200vw;
     }
   }
 </style>
