@@ -10,15 +10,21 @@
   $effect(() => {
     app.menu.show;
 
+    const onStart = () => svg.style.display = "initial";
+    const onComplete = () => svg.style.display = "none";
+
+    onComplete();
+
     if (isOnMount) return isOnMount = false;
 
+    onStart();
     const height = svg.clientHeight;
     const width = window.innerWidth;
     const initialPath = `M 0 0 Q ${width / 2} 0 ${width} 0`;
     const targetPath = `M 0 0 Q ${width / 2} ${height} ${width} 0`;
     const ease = CustomEase.create("custom", "0.76, 0, 0.24, 1");
 
-    gsap.timeline()
+    gsap.timeline({ onComplete })
     .to(path, {
       attr: { d: initialPath },
       duration: 0,

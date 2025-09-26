@@ -60,19 +60,6 @@
 </header>
 
 <style>
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--header-y-padding) var(--x-padding);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    width: 100vw;
-    mix-blend-mode: difference;
-  }
-
   header.menu-open {
     mix-blend-mode: normal;
   }
@@ -85,11 +72,20 @@
     background-color: var(--black);
   }
 
+  a, .hamburger {
+    position: fixed;
+    top: var(--header-y-padding);
+    z-index: 1000;
+    mix-blend-mode: difference;
+  }
+
   a {
     color: var(--white);
+    left: var(--x-padding);
   }
 
   .hamburger {
+    right: var(--x-padding);
     display: flex;
     flex-direction: column;
     gap: 6px;
