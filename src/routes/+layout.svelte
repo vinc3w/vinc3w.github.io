@@ -18,6 +18,7 @@
   import { seo } from "$lib/data/seo";
 
 	let { children } = $props();
+	let refreshFooter = $state(false);
 
 	gsap.registerPlugin(
 		ScrollTrigger,
@@ -25,6 +26,13 @@
 		SplitText,
 		CustomEase,
 	);
+
+	$effect(() => {
+		if (app.navigation.inProcess) return;
+		untrack(() => {
+			refreshFooter = !refreshFooter;
+		});
+	});
 
 	onMount(() => {
 		ScrollSmoother.create({
@@ -84,7 +92,9 @@
 <div id="smooth-wrapper">
 	<div id="smooth-content">
 		<main>{@render children?.()}</main>
-		<Footer />
+		{#key refreshFooter}
+			<Footer />
+		{/key}
 	</div>
 </div>
 

@@ -110,7 +110,7 @@
     justify-content: space-between;
     gap: 64px;
     /* Only -50% does not work for some reason */
-    transform: translateY(-49%);
+    transform: translateY(-30%);
   }
 
   a,
