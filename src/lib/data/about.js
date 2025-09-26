@@ -1,7 +1,7 @@
 export const expertises = [
   {
     name: "Front End",
-    description: "I focus on building responsive and engaging user interfaces that feel smooth and intuitive. From layout to interaction, I aim to create experiences that not only look good but also work seamlessly across devices.",
+    description: "I focus on building responsive and engaging interfaces, creating experiences that look great and work seamlessly across devices.",
     tools: [
       "React",
       "SvelteKit",
@@ -9,7 +9,7 @@ export const expertises = [
   },
   {
     name: "Back End",
-    description: "I enjoy designing and developing the backbone of applications, creating systems that are secure, efficient, and scalable. My goal is to make sure the logic and data handling behind the scenes work flawlessly to support the user experience.",
+    description: "I design and develop the backbone of applications, building secure and scalable systems that keep everything running smoothly.",
     tools: [
       "Laravel",
       "ExpressJS",
@@ -19,14 +19,14 @@ export const expertises = [
   },
   {
     name: "Design",
-    description: "While development is my core strength, I bring in design thinking to ensure every product feels intentional and user-friendly. I pay attention to structure, flow, and aesthetics to make solutions that are both functional and visually clear.",
+    description: "I apply design thinking to ensure products are intentional, user-friendly, and visually clear with clean structures and flows.",
     tools: [
       "Figma",
     ],
   },
   {
     name: "Tools",
-    description: "I rely on industry-standard tools to collaborate effectively, test ideas, and keep projects organized from start to finish. These tools are an essential part of how I streamline workflows and maintain quality throughout the development process.",
+    description: "I rely on industry-standard tools to collaborate, test ideas, and stay organized throughout the development process.",
     tools: [
       "Postman",
       "Git",
