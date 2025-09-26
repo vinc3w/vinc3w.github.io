@@ -60,7 +60,8 @@
 </header>
 
 <style>
-  header.menu-open {
+  header.menu-open a,
+  header.menu-open .hamburger {
     mix-blend-mode: normal;
   }
 

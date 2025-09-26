@@ -17,13 +17,62 @@
   let currentPage = $derived(page.url.pathname.split("/")[1]);
   let isOnMount = true;
 
+  const linksData = [
+    {
+      label: "Home",
+      href: HOME_ROUTE,
+      pageName: "",
+    },
+    {
+      label: "Work",
+      href: WORK_ROUTE,
+      pageName: "work",
+    },
+    {
+      label: "About",
+      href: ABOUT_ROUTE,
+      pageName: "about",
+    },
+    {
+      label: "Contact",
+      href: EMAIL_LINK,
+      target: "_blank",
+    },
+  ];
+
   $effect(() => {
     app.menu.show;
 
     if (isOnMount) return isOnMount = false;
 
-    if (app.menu.show) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "initial";
+    if (app.menu.show) {
+      document.body.style.overflow = "hidden";
+      gsap.to(links, {
+        y: "-100%",
+        opacity: 0,
+        duration: 0,
+        onComplete: () => links.forEach((link, index) => gsap.to(link, {
+          y: 0,
+          opacity: (
+            currentPage.toLowerCase() === linksData[index].pageName
+              ? 1
+              : 0.5
+          ),
+          duration: 0.6,
+          ease: "power2.out",
+          delay: 0.4 + (0.1 * index),
+        })),
+      });
+    }
+    else {
+      document.body.style.overflow = "initial";
+      gsap.to(links, {
+        y: "-100%",
+        opacity: 0,
+        duration: 0.6,
+        ease: "power2.out",
+      });
+    }
 
     gsap.to(nav, {
       y: app.menu.show ? 0 : "-100%",
@@ -41,7 +90,8 @@
       onComplete: () => backdrop.style.display = "none",
     });
 
-    links.forEach(link => link.onclick = () => {
+    links.forEach((link, index) => link.onclick = () => {
+      if (linksData[index].target === "_blank") return;
       app.menu.show = false;
     });
   });
@@ -49,45 +99,18 @@
 
 <nav bind:this={nav} class="menu">
   <ul>
-    <li>
-      <a
-        bind:this={links[0]}
-        onclick={e => handleLinkClick(e, HOME_ROUTE)}
-        href={HOME_ROUTE}
-        class:current={currentPage.toLowerCase() === ""}
-      >
-        Home
-      </a>
-    </li>
-    <li>
-      <a
-        bind:this={links[1]}
-        onclick={e => handleLinkClick(e, WORK_ROUTE)}
-        href={WORK_ROUTE}
-        class:current={currentPage.toLowerCase() === "work"}
-      >
-        Work
-      </a>
-    </li>
-    <li>
-      <a
-        bind:this={links[2]}
-        onclick={e => handleLinkClick(e, ABOUT_ROUTE)}
-        href={ABOUT_ROUTE}
-        class:current={currentPage.toLowerCase() === "about"}
-      >
-        About
-      </a>
-    </li>
-    <li>
-      <a
-        bind:this={links[3]}
-        href={EMAIL_LINK}
-        target="_blank"
-      >
-        Contact
-      </a>
-    </li>
+    {#each linksData as link, i}
+      <li>
+        <a
+          bind:this={links[i]}
+          onclick={e => link.pageName && handleLinkClick(e, link.href)}
+          href={link.href}
+          target={link.target}
+        >
+          {link.label}
+        </a>
+      </li>
+    {/each}
   </ul>
   <Curve />
 </nav>
@@ -104,28 +127,30 @@
 
   ul {
     height: 100%;
-    padding: 128px var(--x-padding);
+    padding: 80px var(--x-padding);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    gap: 24px;
+  }
+
+  li {
+    overflow-y: hidden;
   }
   
   a {
     display: block;
     color: var(--black);
     text-transform: uppercase;
-    font-size: 80px;
-    font-weight: bold;
+    font-size: 96px;
+    font-family: "FK Screamer";
+    letter-spacing: 2px;
     line-height: 100%;
-    opacity: 0.5;
     width: fit-content;
-    transition: opacity 70ms linear;
+    transition: opacity 100ms ease-in-out;
   }
 
-  a.current,
   a:hover {
-    opacity: 1;
+    opacity: 1 !important;
   }
 
   .backdrop {
@@ -137,24 +162,15 @@
     display: none;
   }
 
-  @media (width <= 800px) {
+  @media (width <= 700px) {
     ul {
-      padding-bottom: 64px;
-    }
-
-    a {
-      font-size: 64px;
+      padding-bottom: 48px;
     }
   }
 
-  @media (width <= 550px) {
-    ul {
-      padding-bottom: 64px;
-      gap: 16px;
-    }
-
+  @media (width <= 500px) {
     a {
-      font-size: 48px;
+      font-size: 80px;
     }
   }
 </style>

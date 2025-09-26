@@ -33,7 +33,7 @@
       })
       .to(path, {
         attr: { d: targetPath },
-        duration: 0.6,
+        duration: 0.7,
         ease,
       })
       .to(path, {

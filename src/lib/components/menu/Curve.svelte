@@ -31,7 +31,7 @@
     })
     .to(path, {
       attr: { d: targetPath },
-      duration: app.menu.show ? 0.6 : 0.4,
+      duration: app.menu.show ? 0.7 : 0.4,
       ease,
     })
     .to(path, {
