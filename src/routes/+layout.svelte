@@ -15,6 +15,7 @@
   import { app } from "$lib/states/app.svelte";
 
 	import "./global.css";
+  import { seo } from "$lib/data/seo";
 
 	let { children } = $props();
 
@@ -49,10 +50,32 @@
 </script>
 
 <svelte:head>
+	<meta name="title" content={seo.author} />
+	<meta name="description" content={seo.description}>
+	<meta name="keywords" content={seo.keywords.join(",")}>
+	<meta name="robots" content="index,follow">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="language" content="English">
+	<meta name="revisit-after" content="2 days">
+	<meta name="author" content={seo.author}>
+
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={seo.url} />
+	<meta property="og:title" content={seo.author} />
+	<meta property="og:description" content={seo.description} />
+	<meta property="og:image" content={seo.thumbnail} />
+
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content={seo.url} />
+	<meta property="twitter:title" content={seo.author} />
+	<meta property="twitter:description" content={seo.description} />
+	<meta property="twitter:image" content={seo.thumbnail} />
+
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
+
 	<title>Vinc3w</title>
 </svelte:head>
 
