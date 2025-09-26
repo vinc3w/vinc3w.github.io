@@ -108,7 +108,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 128px;
+    gap: 64px;
     /* Only -50% does not work for some reason */
     transform: translateY(-49%);
   }
