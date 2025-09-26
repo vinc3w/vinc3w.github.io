@@ -80,16 +80,18 @@ img {
   display: block;
 }
 
-::-webkit-scrollbar {
+html::-webkit-scrollbar {
   display: none;
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 body {
   background-color: var(--white);
   overflow: hidden;
-  overflow-x: hidden;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 main {
