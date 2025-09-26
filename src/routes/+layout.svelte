@@ -69,7 +69,7 @@
 
 <svelte:head>
 	<meta name="title" content={seo.author} />
-	<meta name="theme-color" content="#D64933" />
+	<meta name="theme-color" content={seo.color} />
 	<meta name="description" content={seo.description}>
 	<meta name="keywords" content={seo.keywords.join(",")}>
 	<meta name="robots" content="index,follow">

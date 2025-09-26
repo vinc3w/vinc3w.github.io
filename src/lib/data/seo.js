@@ -1,6 +1,7 @@
 export const seo = {
   author: "Vincent Har",
   url: "https://vinc3w.github.io/",
+  color: "#D64933",
   description: "Vincent Har is a Full Stack Developer passionate about blending design and code to build functional, elegant, and creative digital experiences.",
   thumbnail: "/thumbnail.png",
   keywords: [
