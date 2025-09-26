@@ -28,9 +28,14 @@
 </script>
 
 <div class="expertises">
-  <HorizontalScrollTitle>
+  <div class="horizontal-scroll-title">
+    <HorizontalScrollTitle>
+      <WhatCanIDoTitle />
+    </HorizontalScrollTitle>
+  </div>
+  <div class="normal-title">
     <WhatCanIDoTitle />
-  </HorizontalScrollTitle>
+  </div>
   <ul bind:this={container}>
     {#each expertises as expertise, i}
       <li bind:this={sections[i]} class="expertise" class:is-last={i === expertises.length - 1}>
@@ -53,6 +58,11 @@
 <style>
   .expertises {
     padding: 0 var(--x-padding);
+  }
+
+  .normal-title {
+    display: none;
+    margin: 128px 0 256px 0;
   }
 
   .expertise {
@@ -84,6 +94,16 @@
 
   .description {
     margin-bottom: 48px;
+  }
+
+  @media (width <= 1000px) {
+    .horizontal-scroll-title {
+      display: none;
+    }
+
+    .normal-title {
+      display: block;
+    }
   }
 
   @media (width <= 800px) {
