@@ -60,4 +60,14 @@
     line-height: 100%;
     visibility: hidden;
   }
+
+  .description {
+    text-align: center;
+  }
+
+  @media (width <= 1000px) {
+    .code {
+      font-size: 128px;
+    }
+  }
 </style>
