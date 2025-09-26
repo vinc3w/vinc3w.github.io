@@ -11,4 +11,5 @@ export const app = $state({
     isOpen: false,
     show: false,
   },
+  headerHeight: null,
 });

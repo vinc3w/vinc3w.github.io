@@ -38,14 +38,14 @@
 @media (width <= 1500px) {
   :root {
     --x-padding: 64px;
-    --header-y-padding: 32px;
-    --header-height: 89px;
   }
 }
 
 @media (width <= 700px) {
   :root {
     --x-padding: 32px;
+    --header-y-padding: 32px;
+    --header-height: 89px;
   }
 }
 

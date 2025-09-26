@@ -74,17 +74,19 @@
 
   a, .hamburger {
     position: fixed;
-    top: var(--header-y-padding);
     z-index: 1000;
     mix-blend-mode: difference;
   }
 
   a {
     color: var(--white);
+    top: var(--header-y-padding);
     left: var(--x-padding);
   }
 
   .hamburger {
+    /* + 7.5px to have "a" and ".hamburger" vertically align with each other */
+    top: calc(var(--header-y-padding) + 7.5px);
     right: var(--x-padding);
     display: flex;
     flex-direction: column;

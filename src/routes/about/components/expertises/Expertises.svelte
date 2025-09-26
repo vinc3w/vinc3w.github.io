@@ -1,29 +1,38 @@
 <script>
   import WhatCanIDoTitle from "./WhatCanIDoTitle.svelte";
   import HorizontalScrollTitle from "$lib/components/horizontal-scroll-title/HorizontalScrollTitle.svelte";
+  import gsap from "gsap";
 
   import { expertises } from "$lib/data/about";
   import { onMount } from "svelte";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { app } from "$lib/states/app.svelte";
 
   const sectionOffset = 128;
 
   let container;
   let sections = $state([]);
 
-  onMount(() => {
+  $effect(() => {
+    if (!app.headerHeight) return;
+
     let previousTotalStackedHeight = 0;
-    sections.forEach((section, index) => {
-      const currentoffset = sectionOffset * index;
-      ScrollTrigger.create({
-        trigger: container,
-        start: `top+=${previousTotalStackedHeight - currentoffset}px 158px`,
-        end: `bottom ${sectionOffset * (sections.length - 1) + sections[sections.length - 1].offsetHeight + 158}px`,
-        pin: section,
-        pinSpacing: false,
+
+    const ctx = gsap.context(() => {
+      sections.forEach((section, index) => {
+        const currentoffset = sectionOffset * index;
+        ScrollTrigger.create({
+          trigger: container,
+          start: `top+=${previousTotalStackedHeight - currentoffset}px ${app.headerHeight}px`,
+          end: `bottom ${sectionOffset * (sections.length - 1) + sections[sections.length - 1].offsetHeight + app.headerHeight}px`,
+          pin: section,
+          pinSpacing: false,
+        });
+        previousTotalStackedHeight += section.offsetHeight;
       });
-      previousTotalStackedHeight += section.offsetHeight;
     });
+
+    return () => ctx.kill();
   });
 </script>
 
@@ -33,9 +42,7 @@
       <WhatCanIDoTitle />
     </HorizontalScrollTitle>
   </div>
-  <div class="normal-title">
-    <WhatCanIDoTitle />
-  </div>
+  <div class="normal-title">What Can I Do</div>
   <ul bind:this={container}>
     {#each expertises as expertise, i}
       <li bind:this={sections[i]} class="expertise" class:is-last={i === expertises.length - 1}>
@@ -62,7 +69,10 @@
 
   .normal-title {
     display: none;
-    margin: 128px 0 256px 0;
+    font-size: 128px;
+    font-family: "FK Screamer";
+    text-transform: uppercase;
+    margin: 128px 0;
   }
 
   .expertise {

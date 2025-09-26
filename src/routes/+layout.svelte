@@ -27,6 +27,14 @@
 		CustomEase,
 	);
 
+	function setHeaderHeight() {
+		if (window.innerWidth <= 700) {
+			app.headerHeight = 89;
+		} else {
+			app.headerHeight = 153;
+		}
+	}
+
 	$effect(() => {
 		if (app.navigation.inProcess) return;
 		untrack(() => {
@@ -35,6 +43,8 @@
 	});
 
 	onMount(() => {
+		setHeaderHeight();
+		
 		ScrollSmoother.create({
       smooth: 1,
       effects: true
@@ -86,6 +96,8 @@
 
 	<title>Vinc3w</title>
 </svelte:head>
+
+<svelte:window onresize={setHeaderHeight} />
 
 <Header />
 
