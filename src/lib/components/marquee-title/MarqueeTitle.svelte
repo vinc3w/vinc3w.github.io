@@ -56,6 +56,12 @@
     }
   }
 
+  @media (width <= 1000px) {
+    .title {
+      width: 100vw;
+    }
+  }
+
   @media (width <= 700px) {
     .marquee-title {
       --spacing: 48px;
@@ -70,12 +76,6 @@
   @media (width <= 600px) {
     .title {
       width: 150vw;
-    }
-  }
-
-  @media (width <= 400px) {
-    .title {
-      width: 100vw;
     }
   }
 </style>

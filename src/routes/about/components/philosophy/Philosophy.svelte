@@ -46,7 +46,7 @@
   }
 
   .marquee-title-container {
-    margin-bottom: 128px;
+    margin-bottom: 160px;
   }
 
   .text {
