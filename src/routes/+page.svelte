@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>Home | Vinc3w</title>
+	<title>Vinc3w</title>
 </svelte:head>
 
 <PageSetup />

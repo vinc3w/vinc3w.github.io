@@ -24,6 +24,10 @@
   });
 </script>
 
+<svelte:head>
+	<title>Error | Vinc3w</title>
+</svelte:head>
+
 <PageSetup />
 
 <div class="error">
