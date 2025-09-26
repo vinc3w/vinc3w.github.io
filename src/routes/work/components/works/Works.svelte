@@ -100,6 +100,12 @@
     place-items: center;
   }
 
+  @media (width <= 700px) {
+    .works {
+      gap: 32px;
+    }
+  }
+
   @media (width <= 600px) {
     .work .info {
       font-size: 48px;

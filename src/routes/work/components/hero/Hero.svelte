@@ -23,7 +23,7 @@
     return filters.includes(value);
   }
 
-  function toogleFilters(value) {
+  function toggleFilter(value) {
     if (!value) {
       params.delete(key);
     } else if (params.has("filter")) {
@@ -73,7 +73,7 @@
       <button
         bind:this={buttons[i]}
         class:on={hasFilter(tag.value)}
-        onclick={() => toogleFilters(tag.value)}
+        onclick={() => toggleFilter(tag.value)}
       >
         {tag.label}
       </button>
@@ -119,5 +119,11 @@
 
   .filters button:hover {
     transform: scale(0.95);
+  }
+
+  @media (width <= 800px) {
+    .filters {
+      gap: 8px;
+    }
   }
 </style>
