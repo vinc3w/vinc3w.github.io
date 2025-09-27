@@ -11,9 +11,9 @@
     INSTAGRAM_LINK,
     LINKEDIN_LINK
   } from "$lib/data/links";
-  import { onMount } from "svelte";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { ScrollSmoother } from "gsap/ScrollSmoother";
+  import { app } from "$lib/states/app.svelte";
 
   let footer;
   let footerContent;
@@ -25,8 +25,21 @@
     ScrollSmoother.get().scrollTo(0, true);
   }
 
-  onMount(() => {
+  $effect(() => {
+    if (!app.headerHeight) return;
+
     const ctx = gsap.context(() => {
+      const headerChildren = [...document.getElementsByTagName("header")[0].children];
+      gsap.to(headerChildren, {
+        y: app.headerHeight * -1,
+        scrollTrigger: {
+          trigger: footer,
+          start: `top ${app.headerHeight}px`,
+          end: "top top",
+          scrub: true,
+        },
+      });
+
       gsap.to(footerContent, {
         y: 0,
         scrollTrigger: {
@@ -94,7 +107,7 @@
 
 <style>
   footer {
-    --height: calc(100vh - var(--header-height));
+    --height: calc(100vh);
 
     min-height: var(--height);
     overflow: hidden;
