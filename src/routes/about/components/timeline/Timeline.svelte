@@ -84,7 +84,17 @@
     grid-column: 7 / span 6;
   }
 
+  @media (width < 1000px) {
+    .title-container {
+      margin-bottom: 128px;
+    }
+  }
+
   @media (width <= 500px) {
+    .title-container {
+      margin-bottom: 64px;
+    }
+
     .timeline-item {
       display: flex;
       flex-direction: column;
