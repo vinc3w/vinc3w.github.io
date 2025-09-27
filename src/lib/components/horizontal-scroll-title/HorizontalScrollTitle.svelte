@@ -18,7 +18,6 @@
         start: "top top",
         end: "+=150%",
         pin: true,
-        pinType: "fixed",
         scrub: true,
       },
     });

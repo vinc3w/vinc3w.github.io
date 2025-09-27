@@ -26,7 +26,6 @@
           start: `top+=${previousTotalStackedHeight - currentoffset}px ${app.headerHeight}px`,
           end: `bottom ${sectionOffset * (sections.length - 1) + sections[sections.length - 1].offsetHeight + app.headerHeight}px`,
           pin: section,
-          pinType: "fixed",
           pinSpacing: false,
         });
         previousTotalStackedHeight += section.offsetHeight;

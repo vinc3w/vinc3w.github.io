@@ -47,7 +47,8 @@
 		
 		ScrollSmoother.create({
       smooth: 1,
-      effects: true
+			smoothTouch: 0.1,
+      effects: true,
     });
 		
 		document.fonts.ready.then(() => {
