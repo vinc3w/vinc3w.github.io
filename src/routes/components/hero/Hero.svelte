@@ -26,6 +26,7 @@
       trigger: hero,
       start: "top top",
       pin: true,
+      pinType: "fixed",
       pinSpacing: false,
     });
   });
