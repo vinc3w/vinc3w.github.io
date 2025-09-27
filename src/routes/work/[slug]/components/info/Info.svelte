@@ -33,7 +33,7 @@
     </div>
     <div class="link">
       <div class="label">Link</div>
-      <a href={data.projectLink}>Here</a>
+      <a href={data.projectLink} target="_blank">Here</a>
     </div>
   </div>
   <div class="row grid-layout">
