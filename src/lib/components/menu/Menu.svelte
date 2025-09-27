@@ -51,10 +51,10 @@
         y: "-100%",
         opacity: 0,
         duration: 0,
-        onComplete: () => links.forEach((link, index) => gsap.to(link, {
+        onComplete: () => links.toReversed().forEach((link, index) => gsap.to(link, {
           y: 0,
           opacity: (
-            currentPage.toLowerCase() === linksData[index].pageName
+            currentPage.toLowerCase() === linksData.toReversed()[index].pageName
               ? 1
               : 0.5
           ),
@@ -130,7 +130,7 @@
     padding: 80px var(--x-padding);
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   li {
