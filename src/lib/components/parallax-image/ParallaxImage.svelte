@@ -31,11 +31,22 @@
   {/if}
   <img bind:this={img} {src} {alt} class="movable">
 </div>
+<div class="normal-image">
+  <img {src} {alt}>
+</div>
 
 <style>
   .parallax-image {
     overflow: hidden;
     position: relative;
+  }
+
+  .normal-image {
+    display: none;
+  }
+
+  .normal-image img {
+    width: 100%;
   }
 
   img.filler {
@@ -50,5 +61,15 @@
     height: calc(100% + var(--offset));
     width: 100%;
     object-fit: cover;
+  }
+
+  @media (width <= 500px) {
+    .parallax-image {
+      display: none;
+    }
+
+    .normal-image {
+      display: block;
+    }
   }
 </style>
