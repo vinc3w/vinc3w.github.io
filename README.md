@@ -5,10 +5,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/vinc3w/vinc3w.github.io">
-    <img src="assets/logo.png" alt="Logo" width="80" height="80">
+    <img src="assets/logo.png" alt="Logo" width="50" height="50">
   </a>
   <h3 align="center">Vincent Har</h3>
-  <p align="center">A Portfolio Website!</p>
+  <a href="https://vinc3w.github.io/">View my Portfolio here!</a>
 </div>
 
 
