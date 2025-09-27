@@ -41,7 +41,7 @@
   }
 }
 
-@media (width <= 700px) {
+@media (width <= 950px) {
   :root {
     --x-padding: 32px;
     --header-y-padding: 32px;

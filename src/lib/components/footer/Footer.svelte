@@ -96,12 +96,12 @@
   footer {
     --height: calc(100vh - var(--header-height));
 
-    height: var(--height);
+    min-height: var(--height);
     overflow: hidden;
   }
 
   .footer-content {
-    height: 100%;
+    min-height: var(--height);
     background-color: var(--black);
     color: var(--white);
     padding: 128px var(--x-padding) 80px var(--x-padding);
