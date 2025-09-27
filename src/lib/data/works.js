@@ -45,7 +45,6 @@ export const works = [
     name: "DimeDuck",
     thumbnail: "https://raw.githubusercontent.com/vinc3w/DimeDuck/refs/heads/master/assets/main.png",
     description: "A simple and intuitive budget tracking app designed to help you take control of your finances. Whether you're managing monthly expenses, saving for a goal, or just trying to stay on top of your spending habits, this app provides the tools you need to make informed financial decisions.",
-    shortDescription: "An app designed to help you take control of your finances.",
     year: 2025,
     projectLink: "https://github.com/vinc3w/DimeDuck",
     tags: [
@@ -72,7 +71,6 @@ export const works = [
     name: "JobHub",
     thumbnail: "https://raw.githubusercontent.com/vinc3w/JobHub/refs/heads/master/assets/main-landscape.png",
     description: "A modern web-based recruitment platform designed to help employers find and connect with skilled employees quickly and efficiently. The system provides a user-friendly interface where job seekers can showcase their skills, experience, and preferences, while employers can browse and filter through a rich database of potential candidates.",
-    shortDescription: "A platform designed to help employers find and connect with skilled employees quickly and efficiently.",
     year: 2024,
     projectLink: "https://github.com/vinc3w/JobHub",
     tags: [
@@ -90,6 +88,27 @@ export const works = [
       "https://raw.githubusercontent.com/vinc3w/JobHub/refs/heads/master/assets/screenshots/dashboard.png",
       "https://raw.githubusercontent.com/vinc3w/JobHub/refs/heads/master/assets/screenshots/notifications.png",
       "https://raw.githubusercontent.com/vinc3w/JobHub/refs/heads/master/assets/screenshots/profile.png",
+    ],
+  },
+  {
+    name: "Portfolio",
+    thumbnail: "https://raw.githubusercontent.com/vinc3w/vinc3w.github.io/master/assets/thumbnail.png",
+    description: "This portfolio website is a personal showcase of my work as a Full Stack Web Developer, highlighting my skills, projects, and journey in the world of software development.",
+    year: 2025,
+    projectLink: "https://github.com/vinc3w/vinc3w.github.io",
+    tags: [
+      "frontend",
+      "design",
+    ],
+    tools: [
+      "SvelteKit",
+      "GSAP",
+    ],
+    gallery: [
+      "https://github.com/vinc3w/vinc3w.github.io/raw/master/assets/desktop-thumbnail.png",
+      "https://github.com/vinc3w/vinc3w.github.io/raw/master/assets/mobile-thumbnail.png",
+      "https://github.com/vinc3w/vinc3w.github.io/raw/master/assets/footer.png",
+      "https://github.com/vinc3w/vinc3w.github.io/raw/master/assets/menu.png",
     ],
   },
   {
