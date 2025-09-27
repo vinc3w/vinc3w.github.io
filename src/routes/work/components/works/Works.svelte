@@ -12,6 +12,7 @@
   let filters = $state();
   let works = $state([]);
   let isOnMount = true;
+  let imageRefresh = $state();
 
   const delay = (app.loadingTransitionMS / 2 + app.loadingDurationMS) / 1000;
 
@@ -42,6 +43,7 @@
         const show = !filters.length || worksData[i].tags.some(t => filters.includes(t));
         work.style.display = show ? "" : "none";
       });
+      imageRefresh = !imageRefresh;
       gsap.to(works, {
         scale: 1,
         opacity: 1,
@@ -69,7 +71,9 @@
       class="work"
       {href}
     >
-      <ParallaxImage src={work.thumbnail} alt={work.name} aspectRatio="6 / 4" />
+      {#key imageRefresh}
+        <ParallaxImage src={work.thumbnail} alt={work.name} aspectRatio="6 / 4" />
+      {/key}
       <div class="info">
         <div class="name">{work.name}</div>
       </div>
