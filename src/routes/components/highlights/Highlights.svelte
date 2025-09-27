@@ -30,14 +30,9 @@
 
 <div class="highlight-container">
   <div class="highlights">
-    <div class="horizontal-scroll-title">
-      <HorizontalScrollTitle>
-        <HighlightsText />
-      </HorizontalScrollTitle>
-    </div>
-    <div class="normal-title">
+    <HorizontalScrollTitle>
       <HighlightsText />
-    </div>
+    </HorizontalScrollTitle>
     <div class="works">
       {#each highlightedWorks as work, i}
         {@const href = `${WORK_ROUTE}/${encodeWorkName(work.name)}`}
@@ -74,10 +69,6 @@
     background-color: var(--black);
     position: relative;
     z-index: 100;
-  }
-
-  .normal-title {
-    display: none;
   }
 
   .highlights {
@@ -128,13 +119,6 @@
   }
 
   @media (width <= 1000px) {
-    .horizontal-scroll-title {
-      display: none;
-    }
-
-    .normal-title {
-      display: initial;
-    }
 
     .works {
       flex-direction: column;
