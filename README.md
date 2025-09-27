@@ -8,7 +8,7 @@
     <img src="assets/logo.png" alt="Logo" width="50" height="50">
   </a>
   <h3 align="center">Vincent Har</h3>
-  <a href="https://vinc3w.github.io/" target="_blank">View my Portfolio here!</a>
+  <a href="https://vinc3w.github.io/">View my Portfolio here!</a>
 </div>
 
 
