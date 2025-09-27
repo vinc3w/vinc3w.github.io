@@ -155,8 +155,8 @@
   }
 
   @media (width <= 700px) {
-    .button-wrapper {
-      grid-column: span 12;
+    .button-container {
+      display: block;
     }
   }
 
