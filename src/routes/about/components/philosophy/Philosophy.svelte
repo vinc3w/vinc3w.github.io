@@ -50,8 +50,32 @@
   }
 
   .text {
-    grid-column: 7 / span 5;
+    grid-column: 7 / span 4;
     font-size: 24px;
+  }
+
+  @media (width <= 1500px) {
+    .text {
+      grid-column: 7 / span 5;
+    }
+  }
+
+  @media (width <= 1200px) {
+    .text {
+      grid-column: 7 / span 6;
+    }
+  }
+
+  @media (width <= 900px) {
+    .text {
+      grid-column: 5 / span 7;
+    }
+  }
+
+  @media (width <= 800px) {
+    .text {
+      grid-column: 3 / span 8;
+    }
   }
 
   @media (width <= 850px) {

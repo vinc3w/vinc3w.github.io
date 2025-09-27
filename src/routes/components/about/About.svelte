@@ -45,7 +45,7 @@
   }
 
   .text {
-    grid-column: span 5;
+    grid-column: span 4;
     font-size: 24px;
   }
 
@@ -53,19 +53,31 @@
     grid-column: span 12;
   }
 
-  @media (width <= 1000px) {
+  @media (width <= 1750px) {
+    .text {
+      grid-column: span 5;
+    }
+  }
+
+  @media (width <= 1200px) {
     .text {
       grid-column: span 6;
     }
   }
 
-  @media (width <= 750px) {
+  @media (width <= 900px) {
+    .text {
+      grid-column: span 7;
+    }
+  }
+
+  @media (width <= 800px) {
     .text {
       grid-column: span 8;
     }
   }
 
-  @media (width <= 550px) {
+  @media (width <= 700px) {
     .about {
       display: flex;
       flex-direction: column;
