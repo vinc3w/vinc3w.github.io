@@ -2,13 +2,24 @@
   import TimelineTitle from "./TimelineTitle.svelte";
   import gsap from "gsap";
 
-  import { timeline } from "$lib/data/about";
+  import { timeline as timelineData } from "$lib/data/about";
   import { onMount } from "svelte";
 
+  let timeline;
   let title;
   let rows = $state([]);
 
   onMount(() => {
+    gsap.to(timeline, {
+      y: 256,
+      scrollTrigger: {
+        trigger: timeline,
+        start: "bottom bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
     gsap.from(rows, {
       y: 64,
       scale: 0.95,
@@ -35,14 +46,14 @@
   });
 </script>
 
-<div class="timeline">
+<div bind:this={timeline} class="timeline">
   <div class="title-container">
     <div bind:this={title} class="title">
       <TimelineTitle />
     </div>
   </div>
   <ul>
-    {#each timeline as tl, i}
+    {#each timelineData as tl, i}
       <li bind:this={rows[i]} class="timeline-item grid-layout">
         <div class="date">{tl.date}</div>
         <ul class="info">
