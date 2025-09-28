@@ -1,12 +1,12 @@
 export const app = $state({
   fonts: { ready: false },
   navigation: {
-    inProcess: false,
+    inProcess: true,
     from: null,
     to: null,
   },
   loadingTransitionMS: 1000,
-  loadingDurationMS: 1400,
+  loadingDurationMS: 700,
   menu: {
     isOpen: false,
     show: false,

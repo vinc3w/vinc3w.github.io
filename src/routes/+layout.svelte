@@ -60,10 +60,9 @@
 		// In case when the query ?=<...> is changed
 		if (from.url.pathname === to.url.pathname) return;
 		app.navigation.inProcess = true;
-		app.navigation.from = from.url;
 		app.navigation.to = to.url;
 		await new Promise(resolve => setTimeout(resolve, app.loadingTransitionMS));
-		ScrollSmoother.get().scrollTo(0, false);
+		// ScrollSmoother.get().scrollTo(0, false);
 		return;
   });
 </script>

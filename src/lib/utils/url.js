@@ -20,11 +20,11 @@ export function getToPageName(to) {
   const name = (
     (split[1] === "work" && split[2])
       ? decodeWorkName(split[2])
-      : split[1] || "hello"
+      : split[1] || "home"
   );
 
   const validPaths = [
-    "hello", "work", "about",
+    "home", "work", "about",
     ...works.map(w => w.name.toLowerCase())
   ];
   if (!validPaths.includes(name.toLowerCase())) return "Error";
