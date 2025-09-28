@@ -104,7 +104,17 @@
     }
   }
 
-  @media (width <= 700px) {
+  @media (width <= 600px) {
+    .text.secondary {
+      grid-column: 3 / span 10;
+    }
+
+    .button-link-container {
+      grid-column: 3 / span 10;
+    }
+  }
+
+  @media (width <= 500px) {
     .about {
       display: flex;
       flex-direction: column;
