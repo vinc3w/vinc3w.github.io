@@ -22,9 +22,14 @@
 </script>
 
 <div bind:this={about} class="about grid-layout">
-  <div class="text">
+  <div class="text primary">
     <TextReveal duration={0.6} stagger={0.02}>
-      I am a Software Engineer passionate about blending design and code to create clean, functional, and engaging digital experiences.
+      My name is Vincent Har and I am a Software Engineer based in Selangor, Malaysia.
+    </TextReveal>
+  </div>
+  <div class="text secondary">
+    <TextReveal duration={0.6} stagger={0.02}>
+      I am passionate about blending design and code to create clean, functional, and engaging digital experiences.
     </TextReveal>
   </div>
   <div class="button-link-container">
@@ -37,43 +42,65 @@
     padding: 256px var(--x-padding) 384px var(--x-padding);
     background-color: var(--black);
     color: var(--white);
-    row-gap: 64px;
     border-top-left-radius: var(--section-border-radius);
     border-top-right-radius: var(--section-border-radius);
     position: relative;
     z-index: 100;
   }
 
-  .text {
-    grid-column: span 4;
+  .text.primary {
+    grid-column: 2 / span 7;
+    font-size: 48px;
+  }
+
+  .text.secondary {
+    grid-column: 7 / span 4;
     font-size: 24px;
+    margin-top: 128px;
   }
 
   .button-link-container {
-    grid-column: span 12;
+    grid-column: 7 / span 6;
+    margin-top: 48px;
   }
 
-  @media (width <= 1750px) {
-    .text {
-      grid-column: span 5;
+  @media (width <= 1450px) {
+    .text.primary {
+      grid-column: 1 / span 8;
+    }
+
+    .text.secondary {
+      grid-column: 7 / span 5;
     }
   }
 
-  @media (width <= 1200px) {
-    .text {
-      grid-column: span 6;
+  @media (width <= 1250px) {
+    .text.primary {
+      grid-column: span 12;
+    }
+
+    .text.secondary {
+      grid-column: 7 / span 6;
     }
   }
 
   @media (width <= 900px) {
-    .text {
-      grid-column: span 7;
+    .text.secondary {
+      grid-column: 5 / span 8;
+    }
+
+    .button-link-container {
+      grid-column: 5 / span 8;
     }
   }
 
   @media (width <= 800px) {
-    .text {
-      grid-column: span 8;
+    .text.primary {
+      font-size: 32px;
+    }
+
+    .text.secondary {
+      margin-top: 80px;
     }
   }
 
