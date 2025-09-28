@@ -18,6 +18,16 @@
   const delay = (app.loadingTransitionMS / 2 + app.loadingDurationMS) / 1000;
 
   onMount(() => {
+    gsap.to(hero, {
+      y: 256,
+      scrollTrigger: {
+        trigger: hero,
+        start: "bottom bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+    
     gsap.from(aboutText, {
       autoAlpha: 0,
       y: "100%",
@@ -42,7 +52,7 @@
 </script>
 
 
-<div class="hero">
+<div bind:this={hero} class="hero">
   <div class="start">
     <div class="about-text-container">
       <div bind:this={aboutText} class="about-text">

@@ -36,32 +36,43 @@
   });
 </script>
 
-<div class="expertises">
-  <HorizontalScrollTitle>
-    <WhatCanIDoTitle />
-  </HorizontalScrollTitle>
-  <ul bind:this={container}>
-    {#each expertises as expertise, i}
-      <li bind:this={sections[i]} class="expertise" class:is-last={i === expertises.length - 1}>
-        <div class="start">
-          <div class="name">{expertise.name}</div>
-        </div>
-        <div class="end">
-          <div class="description">{expertise.description}</div>
-          <ul class="tools">
-            {#each expertise.tools as tool}
-              <li>{tool}</li>
-            {/each}
-          </ul>
-        </div>
-      </li>
-    {/each}
-  </ul>
+<div class="expertises-container">
+  <div class="expertises">
+    <HorizontalScrollTitle>
+      <WhatCanIDoTitle />
+    </HorizontalScrollTitle>
+    <ul bind:this={container}>
+      {#each expertises as expertise, i}
+        <li bind:this={sections[i]} class="expertise" class:is-last={i === expertises.length - 1}>
+          <div class="start">
+            <div class="name">{expertise.name}</div>
+          </div>
+          <div class="end">
+            <div class="description">{expertise.description}</div>
+            <ul class="tools">
+              {#each expertise.tools as tool}
+                <li>{tool}</li>
+              {/each}
+            </ul>
+          </div>
+        </li>
+      {/each}
+    </ul>
+  </div>
 </div>
 
 <style>
-  .expertises {
+  .expertises-container {
+    background-color: var(--black);
+    position: relative;
+    z-index: 100;
+  }
+
+  .expertises{
     padding: 0 var(--x-padding);
+    background-color: var(--white);
+    border-top-left-radius: var(--section-border-radius);
+    border-top-right-radius: var(--section-border-radius);
   }
 
   .expertise {
