@@ -11,7 +11,7 @@
 
   onMount(() => {
     gsap.to(timeline, {
-      y: 256,
+      y: 128,
       scrollTrigger: {
         trigger: timeline,
         start: "bottom bottom",
