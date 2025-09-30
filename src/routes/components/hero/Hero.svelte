@@ -10,15 +10,14 @@
   const delay = (app.loadingTransitionMS / 2 + app.loadingDurationMS) / 1000;
 
   let hero;
-  let helloText;
+  let headlines = $state([]);
   
   onMount(() => {
-    gsap.from(helloText, {
+    gsap.from(headlines, {
       autoAlpha: 0,
       y: "100%",
       opacity: 0,
-      duration: 1,
-      ease: "power4.out",
+      duration: 0.6,
       delay,
     });
 
@@ -33,25 +32,22 @@
 
 <div bind:this={hero} class="hero">
   <div class="start">
-    <TextReveal duration={0.4} stagger={0.03} {delay}>
-      <div>Transforming Ideas Into</div>
-      <div>Digital Products With</div>
-      <div>Code And Design</div>
-    </TextReveal>
-  </div>
-  <div class="end grid-layout">
-    <div class="hello-text-container">
-      <div bind:this={helloText} class="hello-text">
-        <HelloText />
-      </div>
+    <div class="mask">
+      <div bind:this={headlines[0]}>Turning Ideas</div>
     </div>
-    <div class="scroll-indicator">(scroll)</div>
+    <div class="mask">
+      <div bind:this={headlines[1]}>Into Reality</div>
+    </div>
+  </div>
+  <div class="end">
+    <div class="based">Based in Selangor, Malaysia.</div>
+    <div class="scroll-indicator">scroll</div>
   </div>
 </div>
 
 <style>
   .hero {
-    padding: var(--header-height) var(--x-padding) 80px var(--x-padding);
+    padding: 32px var(--x-padding) 80px var(--x-padding);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -62,40 +58,39 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 32px;
+    align-items: center;
+    font-size: 8vw;
+    font-family: "FK Screamer", sans-serif;
+    text-align: center;
   }
 
-  .hello-text-container {
-    grid-column: span 6;
+  .mask {
     overflow-y: hidden;
   }
 
-  .hello-text {
+  .mask > div {
     visibility: hidden;
   }
 
-  .scroll-indicator {
-    grid-column: 7 / span 6;
-    place-self: end end;
+  .end {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  @media (width <= 1200px) {
-    .hero {
-      padding-bottom: 32px;
-    }
-
-    .end {
-      display: initial;
-    }
-
-    .end .scroll-indicator {
-      display: none;
-    }
-  }
-
-  @media (width <= 700px) {
+  @media (width <= 1050px) {
     .start {
-      font-size: 24px;
+      font-size: 13vw;
+    }
+  }
+
+  @media (width <= 550px) {
+    .start {
+      font-size: 17vw;
+    }
+
+    .scroll-indicator {
+      visibility: hidden;
     }
   }
 </style>
