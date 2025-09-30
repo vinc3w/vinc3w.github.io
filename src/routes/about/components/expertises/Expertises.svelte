@@ -7,6 +7,7 @@
   import { onMount } from "svelte";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { app } from "$lib/states/app.svelte";
+  import MarqueeTitle from "$lib/components/marquee-title/MarqueeTitle.svelte";
 
   const sectionOffset = 128;
 
@@ -38,10 +39,10 @@
 
 <div class="expertises-container">
   <div class="expertises">
-    <HorizontalScrollTitle>
+    <MarqueeTitle>
       <WhatCanIDoTitle />
-    </HorizontalScrollTitle>
-    <ul bind:this={container}>
+    </MarqueeTitle>
+    <ul bind:this={container} class="expertise-list">
       {#each expertises as expertise, i}
         <li bind:this={sections[i]} class="expertise" class:is-last={i === expertises.length - 1}>
           <div class="start">
@@ -69,10 +70,14 @@
   }
 
   .expertises{
-    padding: 0 var(--x-padding);
+    padding: 256px var(--x-padding) 0 var(--x-padding);
     background-color: var(--white);
     border-top-left-radius: var(--section-border-radius);
     border-top-right-radius: var(--section-border-radius);
+  }
+
+  .expertise-list {
+    margin-top: 256px;
   }
 
   .expertise {

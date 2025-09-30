@@ -9,6 +9,7 @@
   import { highlightedWorks } from "$lib/data/works";
   import { encodeWorkName, handleLinkClick } from "$lib/utils/url";
   import { onMount } from "svelte";
+  import MarqueeTitle from "$lib/components/marquee-title/MarqueeTitle.svelte";
 
   let container;
   let workElements = $state([]);
@@ -30,9 +31,9 @@
 
 <div class="highlight-container">
   <div class="highlights">
-    <HorizontalScrollTitle>
+    <MarqueeTitle>
       <HighlightsText />
-    </HorizontalScrollTitle>
+    </MarqueeTitle>
     <div class="works">
       {#each highlightedWorks as work, i}
         {@const href = `${WORK_ROUTE}/${encodeWorkName(work.name)}`}
