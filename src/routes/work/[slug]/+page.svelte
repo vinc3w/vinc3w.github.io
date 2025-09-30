@@ -8,8 +8,11 @@
   import FooterShadow from "$lib/components/footer/Shadow.svelte";
   
   import { setupPage } from "$lib/utils/app";
+  import { app } from "$lib/states/app.svelte";
+  import { untrack } from "svelte";
 
   let { data } = $props();
+  let resetPageTarget = $state();
 
   $effect(() => {
     // set navigating as false when page is changed from
@@ -19,13 +22,21 @@
     data;
     setupPage();
   });
+
+  $effect(() => {
+    // refresh page only when page has finished loading
+    app.navigation.inProcess;
+    untrack(() => {
+      if (!app.navigation.inProcess) resetPageTarget = !resetPageTarget;
+    });
+  });
 </script>
 
 <svelte:head>
 	<title>{data.name} | Work | Vinc3w</title>
 </svelte:head>
 
-{#key data}
+{#key resetPageTarget}
   <Hero {data} />
   <Info {data} />
   <Gallery {data} />

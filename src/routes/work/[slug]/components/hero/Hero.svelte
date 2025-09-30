@@ -10,7 +10,7 @@
   let thumbnail = $state();
   let refreshKey = $state(true);
 
-  const delay = (app.loadingTransitionMS / 2 + app.loadingDurationMS) / 1000;
+  const delay = (app.loadingTransitionMS / 2) / 1000;
 
   onMount(() => {
     gsap.to(thumbnail, {
