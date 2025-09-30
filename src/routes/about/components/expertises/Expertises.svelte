@@ -1,13 +1,12 @@
 <script>
   import WhatCanIDoTitle from "./WhatCanIDoTitle.svelte";
-  import HorizontalScrollTitle from "$lib/components/horizontal-scroll-title/HorizontalScrollTitle.svelte";
+  import MarqueeTitle from "$lib/components/marquee-title/MarqueeTitle.svelte";
   import gsap from "gsap";
 
   import { expertises } from "$lib/data/about";
   import { onMount } from "svelte";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { app } from "$lib/states/app.svelte";
-  import MarqueeTitle from "$lib/components/marquee-title/MarqueeTitle.svelte";
 
   const sectionOffset = 128;
 

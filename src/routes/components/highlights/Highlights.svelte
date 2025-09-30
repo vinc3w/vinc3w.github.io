@@ -1,15 +1,14 @@
 <script>
   import ButtonLink from "$lib/components/button-link/ButtonLink.svelte";
   import HighlightsText from "./HighlightsText.svelte";
-  import HorizontalScrollTitle from "$lib/components/horizontal-scroll-title/HorizontalScrollTitle.svelte";
   import ParallaxImage from "$lib/components/parallax-image/ParallaxImage.svelte";
+  import MarqueeTitle from "$lib/components/marquee-title/MarqueeTitle.svelte";
   import gsap from "gsap";
 
   import { WORK_ROUTE } from "$lib/data/routes";
   import { highlightedWorks } from "$lib/data/works";
   import { encodeWorkName, handleLinkClick } from "$lib/utils/url";
   import { onMount } from "svelte";
-  import MarqueeTitle from "$lib/components/marquee-title/MarqueeTitle.svelte";
 
   let container;
   let workElements = $state([]);
