@@ -6,7 +6,7 @@ export async function setupPage() {
   const smoother = ScrollSmoother.get();
   smoother?.scrollTo(0, false);
   
-  Promise.race([
+  Promise.all([
     new Promise(resolve => setTimeout(resolve, app.loadingDurationMS)),
     document.fonts.load,
   ]).then(() => {
