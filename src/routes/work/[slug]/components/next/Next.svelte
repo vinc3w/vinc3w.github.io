@@ -54,7 +54,7 @@
     inset: 0 0 0 0;
     background-color: var(--overlay-dark);
     color: var(--white);
-    font-family: "FK Screamer";
+    font-family: "FK Screamer", sans-serif;
     font-size: 80px;
     display: grid;
     place-items: center;

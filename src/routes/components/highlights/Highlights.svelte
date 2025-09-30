@@ -109,7 +109,7 @@
   }
 
   .work .name {
-    font-family: "FK Screamer";
+    font-family: "FK Screamer", sans-serif;
     font-size: 64px;
     color: var(--white);
   }

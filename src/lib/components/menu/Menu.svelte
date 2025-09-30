@@ -142,7 +142,7 @@
     color: var(--black);
     text-transform: uppercase;
     font-size: 96px;
-    font-family: "FK Screamer";
+    font-family: "FK Screamer", sans-serif;
     letter-spacing: 2px;
     line-height: 100%;
     width: fit-content;

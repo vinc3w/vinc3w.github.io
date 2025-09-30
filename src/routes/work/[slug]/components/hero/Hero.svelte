@@ -54,7 +54,7 @@
   }
 
   .name {
-    font-family: "FK Screamer";
+    font-family: "FK Screamer", sans-serif;
     font-size: 80px;
   }
 

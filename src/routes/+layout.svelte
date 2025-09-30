@@ -62,7 +62,6 @@
 		app.navigation.inProcess = true;
 		app.navigation.to = to.url;
 		await new Promise(resolve => setTimeout(resolve, app.loadingTransitionMS));
-		// ScrollSmoother.get().scrollTo(0, false);
 		return;
   });
 </script>

@@ -4,13 +4,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export async function setupPage() {
   const smoother = ScrollSmoother.get();
-  
   smoother?.scrollTo(0, false);
-  await new Promise(resolve => setTimeout(resolve, app.loadingDurationMS));
-
-  app.navigation.inProcess = false;
   
-  smoother?.effects().forEach((effect) => effect.kill());
-  smoother?.effects("[data-lag], [data-speed]");
-  ScrollTrigger.refresh();
+  Promise.race([
+    new Promise(resolve => setTimeout(resolve, app.loadingDurationMS)),
+    document.fonts.load,
+  ]).then(() => {
+    app.navigation.inProcess = false;
+    smoother?.effects().forEach((effect) => effect.kill());
+    smoother?.effects("[data-lag], [data-speed]");
+    ScrollTrigger.refresh();
+  });
 }
