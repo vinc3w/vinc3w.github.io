@@ -85,6 +85,10 @@
   }
 
   @media (width <= 550px) {
+    .hero {
+      padding-bottom: 32px;
+    }
+
     .start {
       font-size: 17vw;
     }
