@@ -44,7 +44,7 @@
   }
 
   .text.primary {
-    grid-column: span 8;
+    grid-column: 2 / span 8;
     font-size: 48px;
   }
 
@@ -56,11 +56,11 @@
 
   @media (width <= 1450px) {
     .text.primary {
-      grid-column: span 10;
+      grid-column: 1 / span 10;
     }
 
     .text.secondary {
-    grid-column: 7 / span 6;
+    grid-column: 7 / span 5;
     }
   }
 
