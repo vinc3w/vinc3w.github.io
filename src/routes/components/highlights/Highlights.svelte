@@ -103,10 +103,6 @@
     transition: transform 140ms ease-in-out;
   }
 
-  .work:hover {
-    transform: scale(0.98) !important;
-  }
-
   .work .thumbnail-container .small-screen {
     display: none;
   }
