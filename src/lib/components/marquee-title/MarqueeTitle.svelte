@@ -2,12 +2,12 @@
   import gsap from "gsap";
   import { onMount } from "svelte";
 
-  let { color="black", children } = $props();
+  let { color="black", largeDeviceWidth=70, children } = $props();
 
   let items = $state([]);
 </script>
 
-<div class="marquee-title">
+<div class="marquee-title" style:--large-device-width={largeDeviceWidth + "vw"}>
   {#each Array(5) as _, i}
     <div class="marquee-item">
       <div class="title">
@@ -39,7 +39,7 @@
   }
 
   .title {
-    width: 70vw;
+    width: var(--large-device-width);
   }
 
   .divider {
