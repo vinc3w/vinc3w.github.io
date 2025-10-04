@@ -1,8 +1,6 @@
 <script>
-  import HighlightsText from "./HighlightsText.svelte";
   import ParallaxImage from "$lib/components/parallax-image/ParallaxImage.svelte";
   import TextReveal from "$lib/components/text-reveal/TextReveal.svelte";
-  import RightArrow from "$lib/icons/RightArrow.svelte";
   import MarqueeTitle from "$lib/components/marquee-title/MarqueeTitle.svelte";
   import gsap from "gsap";
 
@@ -15,25 +13,22 @@
   let workElements = $state([]);
   
   onMount(() => {
-    gsap.from(workElements, {
+    workElements.forEach(work => gsap.from(work, {
       scale: 0.95,
       opacity: 0,
       duration: 0.8,
       ease: "power4.out",
       scrollTrigger: {
-        trigger: workElements,
+        trigger: work,
         start: "top bottom",
       },
-    });
+    }));
   });
   
 </script>
 
 <div class="highlight-container">
   <div class="highlights">
-    <!-- <MarqueeTitle>
-      <HighlightsText />
-    </MarqueeTitle> -->
     <div class="description">
       <TextReveal duration={0.6} stagger={0.02}>
         <strong>Highlights</strong> of my craft, where coding, design, and logic come together to create seamless solutions.
@@ -96,7 +91,6 @@
     width: 100%;
     position: relative;
     height: fit-content;
-    transition: transform 140ms ease-in-out;
   }
 
   .work .info {
