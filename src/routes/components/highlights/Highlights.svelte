@@ -1,7 +1,8 @@
 <script>
-  import ButtonLink from "$lib/components/button-link/ButtonLink.svelte";
   import HighlightsText from "./HighlightsText.svelte";
   import ParallaxImage from "$lib/components/parallax-image/ParallaxImage.svelte";
+  import TextReveal from "$lib/components/text-reveal/TextReveal.svelte";
+  import RightArrow from "$lib/icons/RightArrow.svelte";
   import MarqueeTitle from "$lib/components/marquee-title/MarqueeTitle.svelte";
   import gsap from "gsap";
 
@@ -9,7 +10,6 @@
   import { highlightedWorks } from "$lib/data/works";
   import { encodeWorkName, handleLinkClick } from "$lib/utils/url";
   import { onMount } from "svelte";
-  import TextReveal from "$lib/components/text-reveal/TextReveal.svelte";
 
   let container;
   let workElements = $state([]);
@@ -31,12 +31,12 @@
 
 <div class="highlight-container">
   <div class="highlights">
-    <MarqueeTitle>
+    <!-- <MarqueeTitle>
       <HighlightsText />
-    </MarqueeTitle>
+    </MarqueeTitle> -->
     <div class="description">
       <TextReveal duration={0.6} stagger={0.02}>
-        I bring together front end, back end, and design perspectives to deliver well-rounded digital experiences.
+        <strong>Highlights</strong> of my craft, where coding, design, and logic come together to create seamless solutions.
       </TextReveal>
     </div>
     <div class="works">
@@ -48,24 +48,19 @@
           {href}
           class="work"
         >
-          <div class="thumbnail-container">
-            <div class="large-screen">
-              <ParallaxImage src={work.thumbnail.portrait || work.thumbnail.landscape} alt={work.name} />
-            </div>
-            <div class="small-screen">
-              <ParallaxImage src={work.thumbnail.landscape} alt={work.name} aspectRatio="6 / 4" />
-            </div>
-          </div>
+          <ParallaxImage src={work.thumbnail.landscape} alt={work.name} aspectRatio="6 / 4" />
           <div class="info">
             <div class="name">{work.name}</div>
           </div>
         </a>
       {/each}
-    </div>
-    <div class="button-container grid-layout">
-      <div class="button-wrapper">
-        <ButtonLink href={WORK_ROUTE}>View All</ButtonLink>
-      </div>
+      <a
+        bind:this={workElements[highlightedWorks.length]}
+        class="button-container"
+        href={WORK_ROUTE}
+      >
+        View All
+      </a>
     </div>
   </div>
 </div>
@@ -78,7 +73,7 @@
   }
 
   .highlights {
-    padding: 256px var(--x-padding);
+    padding: 0 var(--x-padding) 256px var(--x-padding);
     background-color: var(--white);
     border-top-left-radius: var(--section-border-radius);
     border-top-right-radius: var(--section-border-radius);
@@ -87,11 +82,12 @@
   .description {
     font-size: 64px;
     text-transform: uppercase;
-    margin: 192px 0;
+    padding: 192px 0;
   }
 
   .works {
     display: flex;
+    flex-direction: column;
     gap: 32px;
     margin-bottom: 128px;
   }
@@ -103,70 +99,54 @@
     transition: transform 140ms ease-in-out;
   }
 
-  .work .thumbnail-container .small-screen {
-    display: none;
-  }
-
   .work .info {
     position: absolute;
     inset: 0 0 0 0;
     background-color: var(--overlay-dark);
     display: grid;
     place-items: center;
-    transition: opacity 100ms linear;
   }
 
   .work .name {
     font-family: "FK Screamer", sans-serif;
-    font-size: 64px;
+    font-size: 80px;
     color: var(--white);
   }
 
-  .button-wrapper {
-    grid-column: 7 / span 6;
+  .button-container {
+    display: grid;
+    place-items: center;
+    gap: 16px;
+    aspect-ratio: 6 / 4;
+    background-color: var(--black);
+    color: var(--white);
+    font-family: "FK Screamer", sans-serif;
+    font-size: 80px;
+    color: var(--white);
   }
 
   @media (width <= 1000px) {
     .description {
       font-size: 48px;
-    }
-
-    .works {
-      flex-direction: column;
-      margin-top: 128px;
-    }
-
-    .work .thumbnail-container .small-screen {
-      display: initial;
-    }
-
-    .work .thumbnail-container .large-screen {
-      display: none;
-    }
-
-    .work:hover {
-      transform: scale(1) !important;
-    }
-  }
-
-  @media (width <= 700px) {
-    .button-container {
-      display: block;
+      padding-bottom: 128px;
     }
   }
 
   @media (width <= 600px) {
     .description {
       font-size: 32px;
+      padding-bottom: 80px;
     }
 
-    .work .name {
+    .work .name,
+    .button-container {
       font-size: 48px;
     }
   }
 
   @media (width <= 400px) {
-    .work .name {
+    .work .name,
+    .button-container {
       font-size: 32px;
     }
   }
