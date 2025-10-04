@@ -5,9 +5,6 @@
   
   import { onMount } from "svelte";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import { app } from "$lib/states/app.svelte";
-
-  const delay = (app.loadingTransitionMS / 2 + app.loadingDurationMS) / 1000;
 
   let hero;
   
