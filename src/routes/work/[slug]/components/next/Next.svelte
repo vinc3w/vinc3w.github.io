@@ -13,9 +13,9 @@
   const href = `${WORK_ROUTE}/${encodeWorkName(data.next.name)}`;
 
   onMount(() => {
-    gsap.to(next, {
-      scale: 1,
-      opacity: 1,
+    gsap.from(next, {
+      scale: 0.95,
+      opacity: 0,
       duration: 0.8,
       ease: "power4.out",
       scrollTrigger: {
@@ -40,8 +40,6 @@
 <style>
   .next {
     padding: 0 var(--x-padding);
-    opacity: 0;
-    transform: scale(0.95);
   }
 
   .work {

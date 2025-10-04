@@ -6,9 +6,9 @@
   let images = $state([]);
 
   onMount(() => {
-    images.forEach(image => gsap.to(image, {
-      scale: 1,
-      opacity: 1,
+    images.forEach(image => gsap.from(image, {
+      scale: 0.95,
+      opacity: 0,
       duration: 0.8,
       ease: "power4.out",
       scrollTrigger: {
@@ -35,8 +35,6 @@
 
   img {
     width: 100%;
-    opacity: 0;
-    transform: scale(0.9);
   }
 
   @media (width <= 700px) {
