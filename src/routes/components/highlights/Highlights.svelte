@@ -9,6 +9,7 @@
   import { highlightedWorks } from "$lib/data/works";
   import { encodeWorkName, handleLinkClick } from "$lib/utils/url";
   import { onMount } from "svelte";
+  import TextReveal from "$lib/components/text-reveal/TextReveal.svelte";
 
   let container;
   let workElements = $state([]);
@@ -33,6 +34,11 @@
     <MarqueeTitle>
       <HighlightsText />
     </MarqueeTitle>
+    <div class="description">
+      <TextReveal duration={0.6} stagger={0.02}>
+        I bring together front end, back end, and design perspectives to deliver well-rounded digital experiences.
+      </TextReveal>
+    </div>
     <div class="works">
       {#each highlightedWorks as work, i}
         {@const href = `${WORK_ROUTE}/${encodeWorkName(work.name)}`}
@@ -78,10 +84,16 @@
     border-top-right-radius: var(--section-border-radius);
   }
 
+  .description {
+    font-size: 64px;
+    text-transform: uppercase;
+    margin: 192px 0;
+  }
+
   .works {
-    margin: 256px 0 128px 0;
     display: flex;
     gap: 32px;
+    margin-bottom: 128px;
   }
 
   .work {
@@ -119,6 +131,9 @@
   }
 
   @media (width <= 1000px) {
+    .description {
+      font-size: 48px;
+    }
 
     .works {
       flex-direction: column;
@@ -145,6 +160,10 @@
   }
 
   @media (width <= 600px) {
+    .description {
+      font-size: 32px;
+    }
+
     .work .name {
       font-size: 48px;
     }
