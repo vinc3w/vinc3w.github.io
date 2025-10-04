@@ -49,7 +49,7 @@
   }
 
   .text.primary {
-    grid-column: 2 / span 7;
+    grid-column: 3 / span 6;
     font-size: 48px;
   }
 
@@ -64,9 +64,15 @@
     margin-top: 48px;
   }
 
+  @media (width <= 1700px) {
+    .text.primary {
+    grid-column: 2 / span 7;
+    }
+  }
+
   @media (width <= 1450px) {
     .text.primary {
-      grid-column: 1 / span 8;
+      grid-column: 2 / span 7;
     }
 
     .text.secondary {
