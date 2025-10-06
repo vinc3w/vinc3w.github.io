@@ -1,3 +1,5 @@
+export const role = "Web Developer";
+
 export const expertises = [
   {
     name: "Front End",

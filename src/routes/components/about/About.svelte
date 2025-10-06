@@ -5,6 +5,7 @@
 
   import { ABOUT_ROUTE } from "$lib/data/routes";
   import { onMount } from "svelte";
+  import { role } from "$lib/data/about";
 
   let about;
 
@@ -24,7 +25,7 @@
 <div bind:this={about} class="about grid-layout">
   <div class="text primary">
     <TextReveal duration={0.6} stagger={0.02}>
-      My name is Vincent Har and I am a Software Engineer based in Selangor, Malaysia.
+      My name is Vincent Har and I am a {role} based in Selangor, Malaysia.
     </TextReveal>
   </div>
   <div class="text secondary">

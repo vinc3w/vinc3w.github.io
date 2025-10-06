@@ -7,6 +7,7 @@
 
   import { onMount } from "svelte";
   import { app } from "$lib/states/app.svelte";
+  import { role } from "$lib/data/about";
 
   let hero;
   let aboutText;
@@ -63,7 +64,7 @@
   <div class="end grid-layout">
     <div class="text">
       <TextReveal duration={0.6} stagger={0.02}>
-        My name is Vincent Har and I am a Software Engineer based in Selangor, Malaysia.
+        My name is Vincent Har and I am a {role} based in Selangor, Malaysia.
       </TextReveal>
     </div>
     <div bind:this={meImageContainer} class="me-image-container">
