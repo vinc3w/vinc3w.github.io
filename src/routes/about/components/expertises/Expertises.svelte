@@ -1,6 +1,5 @@
 <script>
   import WhatCanIDoTitle from "./WhatCanIDoTitle.svelte";
-  import MarqueeTitle from "$lib/components/marquee-title/MarqueeTitle.svelte";
   import gsap from "gsap";
 
   import { expertises } from "$lib/data/about";
@@ -38,9 +37,9 @@
 
 <div class="expertises-container">
   <div class="expertises">
-    <MarqueeTitle>
-      <WhatCanIDoTitle />
-    </MarqueeTitle>
+    <div class="title">
+      What Can I Do?
+    </div>
     <ul bind:this={container} class="expertise-list">
       {#each expertises as expertise, i}
         <li bind:this={sections[i]} class="expertise" class:is-last={i === expertises.length - 1}>
@@ -75,8 +74,14 @@
     border-top-right-radius: var(--section-border-radius);
   }
 
+  .title {
+    font-family: "FK Screamer", sans-serif;
+    font-size: 25vw;
+    text-transform: uppercase;
+  }
+
   .expertise-list {
-    margin-top: 256px;
+    margin-top: 128px;
   }
 
   .expertise {
