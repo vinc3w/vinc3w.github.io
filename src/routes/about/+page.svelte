@@ -1,6 +1,7 @@
 <script>
   import PageSetup from "$lib/components/page-setup/PageSetup.svelte";
   import Hero from "./components/hero/Hero.svelte";
+  import Intro from "./components/intro/Intro.svelte";
   import Bio from "./components/bio/Bio.svelte";
   import Expertises from "./components/expertises/Expertises.svelte";
   import Timeline from "./components/timeline/Timeline.svelte";
@@ -17,6 +18,7 @@
 <PageSetup />
 
 <Hero />
+<Intro />
 <Bio />
 <Expertises />
 <Timeline />

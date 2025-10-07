@@ -2,19 +2,17 @@
   import TextReveal from "$lib/components/text-reveal/TextReveal.svelte";
   import AboutTitle from "./AboutTitle.svelte";
   import MeJpg from "./me.jpg";
+  import Me1920x1080Jpg from "./me-1920x1080.jpg";
   import gsap from "gsap";
   import ParallaxImage from "$lib/components/parallax-image/ParallaxImage.svelte";
 
   import { onMount } from "svelte";
   import { app } from "$lib/states/app.svelte";
   import { role } from "$lib/data/about";
+  import MarqueeTitle from "$lib/components/marquee-title/MarqueeTitle.svelte";
 
   let hero;
   let aboutText;
-  let aboutTextContainer;
-  let front;
-  let frontWrapper;
-  let meImageContainer;
 
   const delay = (app.loadingTransitionMS / 2 + app.loadingDurationMS) / 1000;
 
@@ -23,12 +21,12 @@
       y: 256,
       scrollTrigger: {
         trigger: hero,
-        start: "bottom bottom",
+        start: "top top",
         end: "bottom top",
         scrub: true,
       },
     });
-    
+
     gsap.from(aboutText, {
       autoAlpha: 0,
       y: "100%",
@@ -37,51 +35,29 @@
       ease: "power4.out",
       delay,
     });
-  
-    gsap.from(meImageContainer, {
-      autoAlpha: 0,
-      scale: 0.9,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: meImageContainer,
-        start: "top bottom",
-      },
-    });
   });
 </script>
 
 
-<div bind:this={hero} class="hero">
-  <div class="start">
-    <div class="about-text-container">
-      <div bind:this={aboutText} class="about-text">
-        <AboutTitle />
-      </div>
-    </div>
-  </div>
-  <div class="end grid-layout">
-    <div class="text">
-      <TextReveal duration={0.6} stagger={0.02}>
-        My name is Vincent Har and I am a {role} based in Selangor, Malaysia.
-      </TextReveal>
-    </div>
-    <div bind:this={meImageContainer} class="me-image-container">
-      <ParallaxImage src={MeJpg} alt="me" aspectRatio="4 / 5" />
+<div bind:this={hero} class="hero" style:--background-image={`url("${Me1920x1080Jpg}")`}>
+  <div class="about-text-container">
+    <div bind:this={aboutText} class="about-text">
+      <AboutTitle fill="white" />
     </div>
   </div>
 </div>
 
 <style>
   .hero {
-    padding: 0 var(--x-padding) 128px var(--x-padding);
-  }
-
-  .start {
+    padding: 0 var(--x-padding) 64px var(--x-padding);
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-image: var(--background-image);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .about-text-container {
@@ -92,30 +68,5 @@
   .about-text {
     width: 100%;
     visibility: hidden;
-  }
-
-  .text {
-    grid-column: span 4;
-    font-size: 24px;
-  }
-
-  .me-image-container {
-    grid-column: 7 / span 6;
-    width: 100%;
-    visibility: hidden;
-  }
-
-  @media (width <= 1000px) {
-    .text {
-      grid-column: span 6;
-    }
-  }
-
-  @media (width <= 750px) {
-    .end {
-      display: flex;
-      flex-direction: column-reverse;
-      gap: 64px;
-    }
   }
 </style>
