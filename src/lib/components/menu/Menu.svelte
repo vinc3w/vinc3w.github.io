@@ -145,12 +145,12 @@
     font-family: "FK Screamer", sans-serif;
     letter-spacing: 2px;
     line-height: 100%;
-    width: fit-content;
-    transition: opacity 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
   }
 
   a:hover {
     opacity: 1 !important;
+    padding-left: 1vw;
   }
 
   .backdrop {
