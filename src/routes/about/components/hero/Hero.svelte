@@ -9,9 +9,10 @@
   import { onMount } from "svelte";
   import { app } from "$lib/states/app.svelte";
   import { role } from "$lib/data/about";
-  import MarqueeTitle from "$lib/components/marquee-title/MarqueeTitle.svelte";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
 
   let hero;
+  let bg;
   let aboutText;
 
   const delay = (app.loadingTransitionMS / 2 + app.loadingDurationMS) / 1000;
@@ -21,10 +22,17 @@
       y: 256,
       scrollTrigger: {
         trigger: hero,
-        start: "top top",
+        start: "bottom bottom",
         end: "bottom top",
         scrub: true,
       },
+    });
+
+    ScrollTrigger.create({
+      trigger: bg,
+      start: "top top",
+      end: "bottom top",
+      pin: true,
     });
 
     gsap.from(aboutText, {
@@ -39,7 +47,8 @@
 </script>
 
 
-<div bind:this={hero} class="hero" style:--background-image={`url("${Me1920x1080Jpg}")`}>
+<div bind:this={hero} class="hero">
+  <img bind:this={bg} src={Me1920x1080Jpg} alt="self" class="bg">
   <div class="about-text-container">
     <div bind:this={aboutText} class="about-text">
       <AboutTitle fill="white" />
@@ -49,15 +58,23 @@
 
 <style>
   .hero {
-    padding: 0 var(--x-padding) 64px var(--x-padding);
-    min-height: 100vh;
+    padding: 0 var(--x-padding);
+    padding-bottom: calc(100vh + 64px);
+    min-height: 200vh;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    background-image: var(--background-image);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   .about-text-container {
