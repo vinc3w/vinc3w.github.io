@@ -8,6 +8,7 @@
   import { highlightedWorks } from "$lib/data/works";
   import { encodeWorkName, handleLinkClick } from "$lib/utils/url";
   import { onMount } from "svelte";
+  import HighlightsText from "./HighlightsText.svelte";
 
   let container;
   let workElements = $state([]);
@@ -29,10 +30,8 @@
 
 <div class="highlight-container">
   <div class="highlights">
-    <div class="description">
-      <TextReveal duration={0.6} stagger={0.02}>
-        <strong>Highlights</strong> of my craft, where coding, design, and logic come together to create seamless solutions.
-      </TextReveal>
+    <div class="title">
+      <HighlightsText />
     </div>
     <div class="works">
       {#each highlightedWorks as work, i}
@@ -74,10 +73,8 @@
     border-top-right-radius: var(--section-border-radius);
   }
 
-  .description {
-    font-size: 64px;
-    text-transform: uppercase;
-    padding: 192px 0;
+  .title {
+    padding: 256px 0 160px 0;
   }
 
   .works {
@@ -119,19 +116,7 @@
     color: var(--white);
   }
 
-  @media (width <= 1000px) {
-    .description {
-      font-size: 48px;
-      padding-bottom: 128px;
-    }
-  }
-
   @media (width <= 600px) {
-    .description {
-      font-size: 32px;
-      padding-bottom: 80px;
-    }
-
     .work .name,
     .button-container {
       font-size: 48px;
