@@ -30,7 +30,7 @@
 
 <style>
   .hero {
-    padding: 32px var(--x-padding) 80px var(--x-padding);
+    padding: 32px var(--x-padding) 48px var(--x-padding);
     height: 100vh;
     display: flex;
     flex-direction: column;
