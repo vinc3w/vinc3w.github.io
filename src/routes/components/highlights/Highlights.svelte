@@ -9,6 +9,7 @@
   import { encodeWorkName, handleLinkClick } from "$lib/utils/url";
   import { onMount } from "svelte";
   import HighlightsText from "./HighlightsText.svelte";
+  import ButtonLink from "$lib/components/button-link/ButtonLink.svelte";
 
   let container;
   let workElements = $state([]);
@@ -33,7 +34,23 @@
     <div class="title">
       <HighlightsText />
     </div>
-    <div class="works">
+    <div class="works large">
+      {#each highlightedWorks as work, i}
+        {@const href = `${WORK_ROUTE}/${encodeWorkName(work.name)}`}
+        <a
+          bind:this={workElements[i]}
+          onclick={e => handleLinkClick(e, href)}
+          {href}
+          class="work"
+        >
+          <ParallaxImage src={work.thumbnail.portrait || work.thumbnail.landscape} alt={work.name} />
+          <div class="info">
+            <div class="name">{work.name}</div>
+          </div>
+        </a>
+      {/each}
+    </div>
+    <div class="works small">
       {#each highlightedWorks as work, i}
         {@const href = `${WORK_ROUTE}/${encodeWorkName(work.name)}`}
         <a
@@ -48,13 +65,11 @@
           </div>
         </a>
       {/each}
-      <a
-        bind:this={workElements[highlightedWorks.length]}
-        class="button-container"
-        href={WORK_ROUTE}
-      >
-        View All
-      </a>
+    </div>
+    <div class="button-container grid-layout">
+      <div class="button">
+        <ButtonLink href={WORK_ROUTE}>View All</ButtonLink>
+      </div>
     </div>
   </div>
 </div>
@@ -74,14 +89,22 @@
   }
 
   .title {
-    padding: 256px 0 160px 0;
+    padding: 256px 0 128px 0;
   }
 
-  .works {
+  .works.small {
+    display: none;
+  }
+
+  .works.large,
+  .works.small {
     display: flex;
-    flex-direction: column;
     gap: 32px;
     margin-bottom: 128px;
+  }
+
+  .works.small {
+    flex-direction: column;
   }
 
   .work {
@@ -104,29 +127,29 @@
     color: var(--white);
   }
 
-  .button-container {
-    display: grid;
-    place-items: center;
-    gap: 16px;
-    aspect-ratio: 6 / 4;
-    background-color: var(--black);
-    color: var(--white);
-    font-family: "FK Screamer", sans-serif;
-    font-size: 80px;
-    color: var(--white);
+  .button-container .button {
+    grid-column: 7 / span 6;
   }
 
-  @media (width <= 600px) {
-    .work .name,
-    .button-container {
+  @media (width <= 1200px) {
+    .work .name {
       font-size: 48px;
     }
   }
 
-  @media (width <= 400px) {
-    .work .name,
-    .button-container {
-      font-size: 32px;
+  @media (width <= 800px) {
+    .works.large {
+      display: none;
+    }
+
+    .works.small {
+      display: flex;
+    }
+  }
+
+  @media (width <= 600px) {
+    .button-container .button {
+      grid-column: span 12;
     }
   }
 </style>
