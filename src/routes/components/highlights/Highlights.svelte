@@ -92,13 +92,16 @@
     padding: 256px 0 128px 0;
   }
 
+  .works.large {
+    display: flex;
+  }
+
   .works.small {
     display: none;
   }
 
   .works.large,
   .works.small {
-    display: flex;
     gap: 32px;
     margin-bottom: 128px;
   }
