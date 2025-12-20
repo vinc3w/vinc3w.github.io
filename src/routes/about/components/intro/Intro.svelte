@@ -20,15 +20,21 @@
   });
 </script>
 
-<div bind:this={bio} class="bio grid-layout">
-  <div class="text">
-    <TextReveal duration={0.6} stagger={0.02}>
-      My name is Vincent Har and I am a {role} based in Selangor, Malaysia.
-    </TextReveal>
+<div class="bio-container">
+  <div bind:this={bio} class="bio grid-layout">
+    <div class="text">
+      <TextReveal duration={0.6} stagger={0.02}>
+        My name is Vincent Har and I am a {role} based in Selangor, Malaysia.
+      </TextReveal>
+    </div>
   </div>
 </div>
 
 <style>
+  .bio-container {
+    background-color: #4a4c4b;
+  }
+
   .bio {
     padding: 256px var(--x-padding) 384px var(--x-padding);
     background-color: var(--white);
