@@ -1,7 +1,6 @@
 <script>
   import TextReveal from "$lib/components/text-reveal/TextReveal.svelte";
   import AboutTitle from "./AboutTitle.svelte";
-  import MeJpg from "./me.jpg";
   import Me1920x1080Jpg from "./me-1920x1080.jpg";
   import gsap from "gsap";
   import ParallaxImage from "$lib/components/parallax-image/ParallaxImage.svelte";
